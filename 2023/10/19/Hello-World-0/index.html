@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"makerbug.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="博客弄好了 可以学习了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MarkDown基础语法与拓展语法">
+<meta property="og:url" content="https://makerbug.github.io/2023/10/19/Hello-World-0/index.html">
+<meta property="og:site_name" content="这是liuluc&#39;s个人博客">
+<meta property="og:description" content="博客弄好了 可以学习了">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://makerbug.github.io/..%5Cimages%5Csnowandtree.jpg">
+<meta property="article:published_time" content="2023-10-19T01:10:32.000Z">
+<meta property="article:modified_time" content="2023-10-19T07:35:46.278Z">
+<meta property="article:author" content="liuluc">
+<meta property="article:tag" content="MarkDown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://makerbug.github.io/..%5Cimages%5Csnowandtree.jpg">
+
+
+<link rel="canonical" href="https://makerbug.github.io/2023/10/19/Hello-World-0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/10/19/Hello-World-0/","path":"2023/10/19/Hello-World-0/","title":"MarkDown基础语法与拓展语法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>MarkDown基础语法与拓展语法 | 这是liuluc's个人博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">这是liuluc's个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一名程序员、足球运动员、摄影师、音乐家、骑行者的成长之路</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MarkDown%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">MarkDown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E9%A2%98%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">标题语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">段落语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E8%A1%8C%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.3.</span> <span class="nav-text">换行语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E8%B0%83%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.4.</span> <span class="nav-text">强调语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.5.</span> <span class="nav-text">引用语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.6.</span> <span class="nav-text">列表语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">1.1.6.2.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E5%88%97%E8%A1%A8%E4%B8%AD%E5%B5%8C%E5%A5%97%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.6.3.</span> <span class="nav-text">在列表中嵌套其他元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.7.</span> <span class="nav-text">代码语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%8F%8D%E5%BC%95%E5%8F%B7"><span class="nav-number">1.1.7.1.</span> <span class="nav-text">转义反引号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.8.</span> <span class="nav-text">分割线语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.9.</span> <span class="nav-text">链接语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E9%93%BE%E6%8E%A5"><span class="nav-number">1.1.9.1.</span> <span class="nav-text">高级链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.10.</span> <span class="nav-text">图片语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%B8%A6%E6%9C%89url"><span class="nav-number">1.1.10.1.</span> <span class="nav-text">图片带有url</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%B5%8CHTML%E6%A0%87%E7%AD%BE"><span class="nav-number">1.1.11.</span> <span class="nav-text">内嵌HTML标签</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">liuluc</p>
+  <div class="site-description" itemprop="description">热爱每一个傍晚</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://makerbug.github.io/2023/10/19/Hello-World-0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liuluc">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这是liuluc's个人博客">
+      <meta itemprop="description" content="热爱每一个傍晚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="MarkDown基础语法与拓展语法 | 这是liuluc's个人博客">
+      <meta itemprop="description" content="博客弄好了 可以学习了">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MarkDown基础语法与拓展语法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-10-19 09:10:32 / 修改时间：15:35:46" itemprop="dateCreated datePublished" datetime="2023-10-19T09:10:32+08:00">2023-10-19</time>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">博客弄好了 可以学习了</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="MarkDown语法"><a href="#MarkDown语法" class="headerlink" title="MarkDown语法"></a>MarkDown语法</h1><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a>标题语法</h3><p>方法一: 在标题前添加#，几个#代表其为几级标题<br>方法二: 在标题下方添加任意数量的&#x3D;&#x3D;来标识一级标题,用–来标识二级标题<br>注意事项: 为了兼容性考虑，应在#和标题之间添加空格（不同MarkDown应用程序处理#和标题之间的空格方式不一样）</p>
+<h3 id="段落语法"><a href="#段落语法" class="headerlink" title="段落语法"></a>段落语法</h3><p>使用空白行对多行文本进行分隔</p>
+<h3 id="换行语法"><a href="#换行语法" class="headerlink" title="换行语法"></a>换行语法</h3><p>方法一: 两个或多个空格+回车<br>方法二: &lt;br&gt;标签</p>
+<h3 id="强调语法"><a href="#强调语法" class="headerlink" title="强调语法"></a>强调语法</h3><p><strong>粗体</strong>: 热爱每一个**<strong>傍晚</strong>**<br><em>斜体</em>: 热爱每一个*<em>傍晚</em>*     热爱每一个_<em>傍晚</em>_</p>
+<h3 id="引用语法"><a href="#引用语法" class="headerlink" title="引用语法"></a>引用语法</h3><blockquote>
+<p>单条语句：热爱每一个傍晚       -liuluc<br>段落引用: 热爱每一个傍晚</p>
+<p>段落引用</p>
+<blockquote>
+<p>嵌套引用</p>
+</blockquote>
+<ul>
+<li>带有其他元素的块引用</li>
+</ul>
+</blockquote>
+<h3 id="列表语法"><a href="#列表语法" class="headerlink" title="列表语法"></a>列表语法</h3><h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><p>在每个列表项前添加数字并跟英文句点  </p>
+<ol>
+<li>热爱每一个傍晚</li>
+<li>热爱每一个傍晚</li>
+</ol>
+<p><strong>注意事项</strong>: 必须得是1.开头，剩下的可以是任意数字  </p>
+<h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><p>在每个列表项前添加破折号-、星号*或加号+</p>
+<ul>
+<li>热爱每一个傍晚</li>
+<li>热爱每一个傍晚</li>
+</ul>
+<h4 id="在列表中嵌套其他元素"><a href="#在列表中嵌套其他元素" class="headerlink" title="在列表中嵌套其他元素"></a>在列表中嵌套其他元素</h4><p>要想在保留列表连续性的同时在列表中添加另一种元素，将该元素缩进四个空格或一个制表符</p>
+<ul>
+<li><p>热爱每一个傍晚</p>
+</li>
+<li><p>热爱每一个傍晚<br>  热爱每一个傍晚</p>
+</li>
+<li><p>热爱每一个傍晚</p>
+</li>
+</ul>
+<h3 id="代码语法"><a href="#代码语法" class="headerlink" title="代码语法"></a>代码语法</h3><p>将代码包裹在反引号中` `<br><code>public void main(String args[])&#123;&#125;</code></p>
+<h4 id="转义反引号"><a href="#转义反引号" class="headerlink" title="转义反引号"></a>转义反引号</h4><p>如果要表示的代码中包含一个或多个`号，可以使用``来对代码块进行包裹</p>
+<h3 id="分割线语法"><a href="#分割线语法" class="headerlink" title="分割线语法"></a>分割线语法</h3><p>请在单独一行上使用三个或多个***、—、___</p>
+<hr>
+<p><strong>注意事项</strong>: 问了兼容性考虑，请在分割线前后添加空行</p>
+<h3 id="链接语法"><a href="#链接语法" class="headerlink" title="链接语法"></a>链接语法</h3><p><strong>语法</strong> [带有链接的句子](url “彩蛋”)</p>
+<p>一个链接<a target="_blank" rel="noopener" href="http://coderway.top/">热爱每一个傍晚</a><br>一个带有标题的链接<a target="_blank" rel="noopener" href="http://coderway.top/" title="什么是爱">热爱每一个傍晚</a></p>
+<h4 id="高级链接"><a href="#高级链接" class="headerlink" title="高级链接"></a>高级链接</h4><p>[热爱每一个傍晚] [1]<br>[1]: <a target="_blank" rel="noopener" href="http://coderway.top/">http://coderway.top</a> (爱是什么)</p>
+<h3 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h3><p><strong>语法</strong> ![图片alt](imageurl “title”)<br><img src="/..%5Cimages%5Csnowandtree.jpg" alt="snowandtree" title="爱么"></p>
+<h4 id="图片带有url"><a href="#图片带有url" class="headerlink" title="图片带有url"></a>图片带有url</h4><p><strong>语法</strong> [![图片alt](imgurl, “title”)](url)</p>
+<h3 id="内嵌HTML标签"><a href="#内嵌HTML标签" class="headerlink" title="内嵌HTML标签"></a>内嵌HTML标签</h3><p><strong>表格</strong><br><strong>注意事项 区块元素前后必须加上空格</strong> </p>
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;热爱&lt;/td&gt;
+        &lt;td&gt;每&lt;/td&gt;
+        &lt;td&gt;一个&lt;/td&gt;
+        &lt;td&gt;傍晚&lt;/td&gt;
+    &lt;tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/MarkDown/" rel="tag"># MarkDown</a>
+          </div>
+
+        
+
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">liuluc</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
