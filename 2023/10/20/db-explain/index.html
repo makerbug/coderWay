@@ -19,26 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"makerbug.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="热爱每一个傍晚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="这是liuluc&#39;s个人博客">
-<meta property="og:url" content="https://makerbug.github.io/archives/index.html">
+    <meta name="description" content="explain详解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="db_explain">
+<meta property="og:url" content="https://makerbug.github.io/2023/10/20/db-explain/index.html">
 <meta property="og:site_name" content="这是liuluc&#39;s个人博客">
-<meta property="og:description" content="热爱每一个傍晚">
+<meta property="og:description" content="explain详解">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-20T09:10:35.000Z">
+<meta property="article:modified_time" content="2023-10-20T10:39:01.847Z">
 <meta property="article:author" content="liuluc">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://makerbug.github.io/archives/">
+<link rel="canonical" href="https://makerbug.github.io/2023/10/20/db-explain/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/10/20/db-explain/","path":"2023/10/20/db-explain/","title":"db_explain"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | 这是liuluc's个人博客</title>
+<title>db_explain | 这是liuluc's个人博客</title>
   
 
 
@@ -71,7 +73,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">这是liuluc's个人博客</h1>
+      <p class="site-title">这是liuluc's个人博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">一名程序员、足球运动员、摄影师、音乐家、骑行者的成长之路</p>
@@ -98,7 +100,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -111,6 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">1.概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%BB%93%E6%9E%9C%E5%90%8D%E8%AF%8D%E5%B1%95%E7%A4%BA"><span class="nav-number">2.</span> <span class="nav-text">2.结果名词展示</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -149,129 +152,142 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 5 篇日志。 继续努力。</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://makerbug.github.io/2023/10/20/db-explain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liuluc">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这是liuluc's个人博客">
+      <meta itemprop="description" content="热爱每一个傍晚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="db_explain | 这是liuluc's个人博客">
+      <meta itemprop="description" content="explain详解">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          db_explain
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+      <time title="创建时间：2023-10-20 17:10:35 / 修改时间：18:39:01" itemprop="dateCreated datePublished" datetime="2023-10-20T17:10:35+08:00">2023-10-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/db/" itemprop="url" rel="index"><span itemprop="name">db</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">explain详解</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>explain是什么：explain是mysql中的一个命令，可以模拟优化器执行SQL语句并返回执行计划，通过执行计划可以分析查询语句或表的性能瓶颈，从而进行SQL优化。</p>
+<p>explain怎么用：<code>explain select * from user;</code></p>
+<p>可以得到什么：</p>
+<table>
+<thead>
+<tr>
+<th align="center">id</th>
+<th align="center">select_type</th>
+<th align="center">table</th>
+<th align="center">partitions</th>
+<th align="center">type</th>
+<th align="center">possible_keys</th>
+<th align="center">key</th>
+<th align="center">key_len</th>
+<th align="center">ref</th>
+<th align="center">rows</th>
+<th align="center">filtered</th>
+<th>Extra</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">SIMPLE</td>
+<td align="center">user</td>
+<td align="center">NULL</td>
+<td align="center">ALL</td>
+<td align="center">NULL</td>
+<td align="center">NULL</td>
+<td align="center">NULL</td>
+<td align="center">NULL</td>
+<td align="center">1</td>
+<td align="center">100.00</td>
+<td>NULL</td>
+</tr>
+</tbody></table>
+<h3 id="2-结果名词展示"><a href="#2-结果名词展示" class="headerlink" title="2.结果名词展示"></a>2.结果名词展示</h3><ol>
+<li>id：表示查询中执行select子句或操作表的顺序<br>id越大越先执行</li>
+<li>select_type：查询的类型，主要用于区分普通查询、联合查询和子查询等复合查询。</li>
+</ol>
+<p>(1) SIMPLE：简单的select查询，查询中不包含子查询和联合查询（union）。</p>
+<blockquote>
+<p><strong><code>explain select * from employee</code></strong></p>
+</blockquote>
+<p>(2) PRIMARY：若查询中包含任何的子查询，最外层查询标记为PRIMARY<br>(3) SUBQUERY：在select或where列表中包含的子查询<br>(4) DERIVED：在FROM列表中包含的子查询被标记为（DERIVED），MySQL会递归执行这些子查询，把结果放在临时表里<br>(5) </p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/161385740">https://zhuanlan.zhihu.com/p/161385740</a></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-20T17:10:35+08:00"
-              content="2023-10-20">
-          10-20
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/20/db-explain/" itemprop="url">
-          <span itemprop="name">db_explain</span>
-        </a>
-      </div>
+    <footer class="post-footer">
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/10/20/db-lock/" rel="prev" title="MySQL锁">
+                  <i class="fa fa-angle-left"></i> MySQL锁
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-20T10:24:08+08:00"
-              content="2023-10-20">
-          10-20
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/20/db-lock/" itemprop="url">
-          <span itemprop="name">MySQL锁</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-20T08:59:58+08:00"
-              content="2023-10-20">
-          10-20
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/20/db/" itemprop="url">
-          <span itemprop="name">数据库慢查询优化方法</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-19T17:15:58+08:00"
-              content="2023-10-19">
-          10-19
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/19/redis/" itemprop="url">
-          <span itemprop="name">redis</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-19T09:10:32+08:00"
-              content="2023-10-19">
-          10-19
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/19/Hello-World-0/" itemprop="url">
-          <span itemprop="name">MarkDown基础语法与拓展语法</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>
