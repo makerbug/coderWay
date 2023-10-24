@@ -19,17 +19,17 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"makerbug.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="热爱每一个傍晚">
+    <meta name="description" content="java开发规范 参照阿里">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java-develop-standard">
+<meta property="og:title" content="java开发规范">
 <meta property="og:url" content="https://makerbug.github.io/2023/10/23/java-develop-standard/index.html">
 <meta property="og:site_name" content="这是liuluc&#39;s个人博客">
-<meta property="og:description" content="热爱每一个傍晚">
+<meta property="og:description" content="java开发规范 参照阿里">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-23T02:38:52.000Z">
-<meta property="article:modified_time" content="2023-10-23T02:38:52.343Z">
+<meta property="article:modified_time" content="2023-10-24T08:54:34.930Z">
 <meta property="article:author" content="liuluc">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="java开发规范">
 <meta name="twitter:card" content="summary">
 
 
@@ -37,10 +37,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/10/23/java-develop-standard/","path":"2023/10/23/java-develop-standard/","title":"java-develop-standard"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/10/23/java-develop-standard/","path":"2023/10/23/java-develop-standard/","title":"java开发规范"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>java-develop-standard | 这是liuluc's个人博客</title>
+<title>java开发规范 | 这是liuluc's个人博客</title>
   
 
 
@@ -100,7 +100,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -113,6 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E8%A7%84%E7%BA%A6"><span class="nav-number">1.</span> <span class="nav-text">编程规约</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E8%A1%A8%E8%A7%84%E7%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">建表规约</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -131,11 +132,11 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -175,12 +176,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="java-develop-standard | 这是liuluc's个人博客">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="java开发规范 | 这是liuluc's个人博客">
+      <meta itemprop="description" content="java开发规范 参照阿里">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          java-develop-standard
+          java开发规范
         </h1>
 
         <div class="post-meta-container">
@@ -193,17 +194,43 @@
 
       <time title="创建时间：2023-10-23 10:38:52" itemprop="dateCreated datePublished" datetime="2023-10-23T10:38:52+08:00">2023-10-23</time>
     </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-10-24 16:54:34" itemprop="dateModified" datetime="2023-10-24T16:54:34+08:00">2023-10-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+    </span>
 
   
 </div>
 
+            <div class="post-description">java开发规范 参照阿里</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><h3 id="编程规约"><a href="#编程规约" class="headerlink" title="编程规约"></a>编程规约</h3><p><strong>【强制】高并发时，同步调用应该去考量锁的性能损耗。能用无锁数据结构，就不要用锁；能锁区块，就不要锁整个方法体；能用对象锁，就不要用类锁。</strong></p>
+<p>说明：尽可能使加锁的代码块工作量尽可能的小，避免在锁代码块中调用RPC方法。</p>
+<p><strong>【强制】不要在foreach循环里进行元素的remove&#x2F;add操作。remove元素请使用Iterator方式，如果并发操作，需要对Iterator对象加锁。</strong></p>
+<p><strong>foreach遍历的本质就是使用迭代器来遍历</strong><br>当在foreach中进行remove&#x2F;add时，会触发java集合的fail-fast机制。</p>
+<p>迭代器是一个访问者，List集合本身也是一个访问者，存在两个访问者。当使用List修改了自身的元素，迭代器再次访问时就会发现集合已经发生了变化，进而抛出并发修改异常，</p>
+<p><strong>【强制】在高并发场景中，避免使用”等于”判断作为中断或退出的条件。</strong></p>
+<p>如果并发控制没有处理好，容易产生等值判断被“击穿”的情况，使用大于或小于的区间判断条件来代替。 反例：判断剩余奖品数量等于0时，终止发放奖品，但因为并发处理错误导致奖品数量瞬间变成了负数，这样的话，活动无法终止。</p>
+<h3 id="建表规约"><a href="#建表规约" class="headerlink" title="建表规约"></a>建表规约</h3><p><strong>主键索引名为 pk_字段名；唯一索引名为 uk_字段名；普通索引名则为 idx_字段名。</strong></p>
+<p>说明：pk_ 即 primary key；uk_ 即 unique key；idx_ 即 index 的简称。</p>
+
     </div>
 
     
@@ -211,18 +238,21 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" rel="tag"># java开发规范</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/10/20/db-explain/" rel="prev" title="db_explain">
-                  <i class="fa fa-angle-left"></i> db_explain
+                <a href="/2023/10/20/db-explain/" rel="prev" title="Mysql explain详解">
+                  <i class="fa fa-angle-left"></i> Mysql explain详解
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/10/23/sql-pagination-query/" rel="next" title="sql-pagination-query">
-                  sql-pagination-query <i class="fa fa-angle-right"></i>
+                <a href="/2023/10/23/sql-pagination-query/" rel="next" title="Mysql分页查询">
+                  Mysql分页查询 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
