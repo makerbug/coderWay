@@ -19,15 +19,13 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"makerbug.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="热爱每一个傍晚">
-<meta property="og:type" content="article">
-<meta property="og:title" content="httpcliet">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="httpclient详解">
 <meta property="og:url" content="https://makerbug.github.io/2023/10/25/httpcliet/index.html">
 <meta property="og:site_name" content="这是liuluc&#39;s个人博客">
-<meta property="og:description" content="热爱每一个傍晚">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-25T05:28:42.000Z">
-<meta property="article:modified_time" content="2023-10-25T05:28:42.787Z">
+<meta property="article:modified_time" content="2023-10-30T07:20:56.141Z">
 <meta property="article:author" content="liuluc">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -37,10 +35,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/10/25/httpcliet/","path":"2023/10/25/httpcliet/","title":"httpcliet"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/10/25/httpcliet/","path":"2023/10/25/httpcliet/","title":"httpclient详解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>httpcliet | 这是liuluc's个人博客</title>
+<title>httpclient详解 | 这是liuluc's个人博客</title>
   
 
 
@@ -100,7 +98,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -113,6 +111,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -125,13 +124,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -175,12 +174,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="httpcliet | 这是liuluc's个人博客">
+      <meta itemprop="name" content="httpclient详解 | 这是liuluc's个人博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          httpcliet
+          httpclient详解
         </h1>
 
         <div class="post-meta-container">
@@ -193,6 +192,13 @@
 
       <time title="创建时间：2023-10-25 13:28:42" itemprop="dateCreated datePublished" datetime="2023-10-25T13:28:42+08:00">2023-10-25</time>
     </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-10-30 15:20:56" itemprop="dateModified" datetime="2023-10-30T15:20:56+08:00">2023-10-30</time>
+    </span>
 
   
 </div>
@@ -203,7 +209,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
     </div>
 
     
@@ -221,8 +227,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/10/25/differece-ribbon-nginx-gataway/" rel="next" title="differece_ribbon_nginx_gataway">
-                  differece_ribbon_nginx_gataway <i class="fa fa-angle-right"></i>
+                <a href="/2023/10/25/differece-ribbon-nginx-gataway/" rel="next" title="Ribbon、Gataway、Nginx之间的区别">
+                  Ribbon、Gataway、Nginx之间的区别 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

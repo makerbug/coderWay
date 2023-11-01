@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"makerbug.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="数据库索引详解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库索引详解">
+<meta property="og:url" content="https://makerbug.github.io/2023/10/30/db-index/index.html">
+<meta property="og:site_name" content="这是liuluc&#39;s个人博客">
+<meta property="og:description" content="数据库索引详解">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-30T02:09:41.000Z">
+<meta property="article:modified_time" content="2023-10-30T07:21:42.603Z">
+<meta property="article:author" content="liuluc">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://makerbug.github.io/2023/10/30/db-index/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/10/30/db-index/","path":"2023/10/30/db-index/","title":"数据库索引详解"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数据库索引详解 | 这是liuluc's个人博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">这是liuluc's个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一名程序员、足球运动员、摄影师、音乐家、骑行者的成长之路</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">索引的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">3.</span> <span class="nav-text">索引的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%A1%E8%B6%B3%E5%A4%8D%E5%90%88%E7%B4%A2%E5%BC%95%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%B8%A4%E5%A4%A7%E5%8E%9F%E5%88%99"><span class="nav-number">4.</span> <span class="nav-text">满足复合索引查询的两大原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">5.</span> <span class="nav-text">索引的存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#B%E6%A0%91"><span class="nav-number">5.1.</span> <span class="nav-text">B树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-%E6%A0%91"><span class="nav-number">5.2.</span> <span class="nav-text">B+树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%8C%83%E5%9B%B4%E6%9F%A5%E8%AF%A2"><span class="nav-number">5.2.1.</span> <span class="nav-text">范围查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="nav-number">6.</span> <span class="nav-text">回表查询</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">liuluc</p>
+  <div class="site-description" itemprop="description">热爱每一个傍晚</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://makerbug.github.io/2023/10/30/db-index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liuluc">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这是liuluc's个人博客">
+      <meta itemprop="description" content="热爱每一个傍晚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数据库索引详解 | 这是liuluc's个人博客">
+      <meta itemprop="description" content="数据库索引详解">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据库索引详解
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-10-30 10:09:41 / 修改时间：15:21:42" itemprop="dateCreated datePublished" datetime="2023-10-30T10:09:41+08:00">2023-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/db/" itemprop="url" rel="index"><span itemprop="name">db</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">数据库索引详解</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>数据库索引:<strong>以空间换时间</strong></p>
+<h3 id="索引的分类"><a href="#索引的分类" class="headerlink" title="索引的分类"></a>索引的分类</h3><ol>
+<li>主键索引 primary key<br>设定为主键后，数据库自动建立索引，InnoDB为聚簇索引，主键索引列值不能为空。</li>
+<li>唯一索引<br>索引列的值必须唯一，允许有空值，但只允许有一个空值</li>
+<li>复合索引<br>一个索引可以包含多个列，多个列共同构成一个复合索引</li>
+<li>全文索引</li>
+<li>空间索引</li>
+<li>前缀索引</li>
+<li>聚集索引(聚簇索引)<br>InnoDB的主键就是聚簇索引，主键索引与记录存储在一起，所以才叫聚集索引 (Clustered Index) 普通索引存储主键</li>
+</ol>
+<h3 id="索引的创建"><a href="#索引的创建" class="headerlink" title="索引的创建"></a>索引的创建</h3><ol>
+<li>创建主键索引<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#建表时，主键默认为索引</span><br><span class="line">create table user(</span><br><span class="line">    id varchar(11) primary key,</span><br><span class="line">    name varchar(20),</span><br><span class="line">    age int</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">#查看user表中的索引</span><br><span class="line">show index from user;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://ucc.alicdn.com/images/user-upload-01/8d3b5da08f7e4ec1af87ee3eb06e9763.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiA5a6_5ZCb,size_20,color_FFFFFF,t_70,g_se,x_16">主键索引</a></p>
+<p>&#x3D;&#x3D;为什么主键索引的主键不宜太长&#x3D;&#x3D;<br><a target="_blank" rel="noopener" href="https://pic4.zhimg.com/80/v2-c802ff0118f6bc5c368a7355a3c2fb2b_720w.webp">为什么主键索引的主键不宜太长</a><br>innoDB主键默认为聚簇索引，聚簇索引存储主键和记录，其他索引存储主键，如果主键太长，Mysql有限的缓冲区，存储的索引与数据会减少，磁盘IO的概率会增加。</p>
+<ol start="2">
+<li><p>创建单列索引</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index name_index on user(name);</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://ucc.alicdn.com/images/user-upload-01/f622c18a4f214155852be61ee0397b74.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiA5a6_5ZCb,size_20,color_FFFFFF,t_70,g_se,x_16">单列索引</a></p>
+</li>
+<li><p>创建唯一索引</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index age_index on user(age);</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://ucc.alicdn.com/images/user-upload-01/892db10dd3ae48c4a26aecb446b446ac.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiA5a6_5ZCb,size_20,color_FFFFFF,t_70,g_se,x_16">唯一索引</a></p>
+</li>
+<li><p>创建复合索引</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index name_age_index on user(name,age);</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://ucc.alicdn.com/images/user-upload-01/cc6ac014998b4c63967c2bb78433435e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiA5a6_5ZCb,size_20,color_FFFFFF,t_70,g_se,x_16">复合索引</a></p>
+</li>
+</ol>
+<h3 id="满足复合索引查询的两大原则"><a href="#满足复合索引查询的两大原则" class="headerlink" title="满足复合索引查询的两大原则"></a>满足复合索引查询的两大原则</h3><ol>
+<li>最左前缀原则</li>
+<li>Mysql引擎在执行查询时，为了更好地利用索引，在查询过程中会动态调整查询字段的顺序（<strong>当条件中的字段全部达到复合索引中的字段时，在三个字段上建立的复合索引，必须也得是三个字段的查询</strong>），使其满足最左前缀原则。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#可以使用复合索引：索引中包含的字段数都有，只是顺序不正确，在执行的时候可以动态调整为最前左缀</span><br><span class="line">select * from user where sex = ? and age = ? and name = ?</span><br><span class="line">select * from user where age = ? and sex = ? and name = ?</span><br><span class="line"></span><br><span class="line">#不可以使用复合索引：因为缺少字段，并且顺序不正确</span><br><span class="line">select * from user where sex = ? and age = ? </span><br><span class="line">select * from user where age = ? and name = ?</span><br><span class="line">select * from user where age = ?</span><br><span class="line">select * from user where sex = ? </span><br></pre></td></tr></table></figure>
+&#x3D;&#x3D;使用复合索引查询时，mysql会一直向右匹配直到遇到范围查询（&gt;、&lt;、between、like）等就会停止匹配&#x3D;&#x3D;</li>
+</ol>
+<h3 id="索引的存储结构"><a href="#索引的存储结构" class="headerlink" title="索引的存储结构"></a>索引的存储结构</h3><h4 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h4><p><a target="_blank" rel="noopener" href="https://ucc.alicdn.com/images/user-upload-01/f1dbeadce2c14cef9210a119d6f195f5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiA5a6_5ZCb,size_20,color_FFFFFF,t_70,g_se,x_16">B树</a></p>
+<p>B树的缺点：</p>
+<ol>
+<li>B树不支持范围查询的快速查找，</li>
+</ol>
+<h4 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h4><p>B+树和B树最主要的区别在于&#x3D;&#x3D;非叶子节点是否存储数据的问题&#x3D;&#x3D;<br>B树：叶子节点和非叶子节点都会存储数据<br>B+树：只有叶子节点会存储数据，非叶子节点只存储键值key<br><a target="_blank" rel="noopener" href="https://ucc.alicdn.com/images/user-upload-01/0cf6f390478e4f83a72c82325c329926.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiA5a6_5ZCb,size_20,color_FFFFFF,t_70,g_se,x_16">B+树</a></p>
+<h5 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h5><p><a target="_blank" rel="noopener" href="https://ucc.alicdn.com/images/user-upload-01/d7e3168feae043cca47600b95b901c41.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiA5a6_5ZCb,size_20,color_FFFFFF,t_70,g_se,x_16">范围查询</a></p>
+<h3 id="回表查询"><a href="#回表查询" class="headerlink" title="回表查询"></a>回表查询</h3><p>在辅助索引树中获取到主键id，再根据id到主键索引中检索数据的过程称为回表查询。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/10/27/network-token/" rel="prev" title="network-token">
+                  <i class="fa fa-angle-left"></i> network-token
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/10/30/mybatis-general/" rel="next" title="mybatis总结">
+                  mybatis总结 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">liuluc</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
