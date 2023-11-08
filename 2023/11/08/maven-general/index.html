@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"makerbug.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="maven">
+<meta property="og:type" content="article">
+<meta property="og:title" content="maven-general">
+<meta property="og:url" content="https://makerbug.github.io/2023/11/08/maven-general/index.html">
+<meta property="og:site_name" content="这是liuluc&#39;s个人博客">
+<meta property="og:description" content="maven">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://makerbug.github.io/_posts/maven-general/4iPKzN7o1Q.jpg">
+<meta property="og:image" content="https://makerbug.github.io/_posts/maven-general/JNkBKTI4MF.jpg">
+<meta property="og:image" content="https://makerbug.github.io/_posts/maven-general/8bdpeeMUi0.jpg">
+<meta property="og:image" content="https://makerbug.github.io/maven-general/packagewithout.jpg">
+<meta property="og:image" content="https://makerbug.github.io/maven-general/packagewith.jpg">
+<meta property="og:image" content="https://makerbug.github.io/_posts/maven-general/project.jpg">
+<meta property="article:published_time" content="2023-11-08T01:49:20.000Z">
+<meta property="article:modified_time" content="2023-11-08T05:30:47.691Z">
+<meta property="article:author" content="liuluc">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://makerbug.github.io/_posts/maven-general/4iPKzN7o1Q.jpg">
+
+
+<link rel="canonical" href="https://makerbug.github.io/2023/11/08/maven-general/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/11/08/maven-general/","path":"2023/11/08/maven-general/","title":"maven-general"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>maven-general | 这是liuluc's个人博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">这是liuluc's个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一名程序员、足球运动员、摄影师、音乐家、骑行者的成长之路</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#springboot-maven%E7%88%B6%E5%AD%90%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E5%BB%BA%E3%80%81%E8%BF%90%E8%A1%8C%E3%80%81%E6%89%93%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">springboot+maven父子项目的构建、运行、打包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven%E5%88%9B%E5%BB%BA%E7%88%B6%E5%AD%90%E4%BE%9D%E8%B5%96%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.1.</span> <span class="nav-text">maven创建父子依赖项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%88%B6%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.1.1.</span> <span class="nav-text">父项目的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%80%E6%9C%89%E7%9A%84jar%E5%8C%85%E4%BE%9D%E8%B5%96%E5%BF%85%E9%A1%BB%E5%9C%A8%E7%88%B6%E7%BA%A7%E9%A1%B9%E7%9B%AE%E4%B8%ADpom-xml%E4%B8%AD%E5%BC%95%E7%94%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">所有的jar包依赖必须在父级项目中pom.xml中引用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring-boot-maven-plugin"><span class="nav-number">1.2.</span> <span class="nav-text">spring-boot-maven-plugin</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E4%B8%8D%E7%94%A8%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">1.2.1.</span> <span class="nav-text">用不用这个插件的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">使用这个插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8E%BB%E6%8E%89%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">去掉这个插件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maven%E4%B8%AD%E5%A4%9A%E6%A8%A1%E5%9D%97%E9%A1%B9%E7%9B%AE%E5%8F%AA%E6%89%93%E6%88%90%E4%B8%80%E4%B8%AAjar%E5%8C%85"><span class="nav-number">1.3.</span> <span class="nav-text">maven中多模块项目只打成一个jar包</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">liuluc</p>
+  <div class="site-description" itemprop="description">热爱每一个傍晚</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://makerbug.github.io/2023/11/08/maven-general/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liuluc">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这是liuluc's个人博客">
+      <meta itemprop="description" content="热爱每一个傍晚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="maven-general | 这是liuluc's个人博客">
+      <meta itemprop="description" content="maven">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          maven-general
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-08 09:49:20 / 修改时间：13:30:47" itemprop="dateCreated datePublished" datetime="2023-11-08T09:49:20+08:00">2023-11-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/maven/" itemprop="url" rel="index"><span itemprop="name">maven</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">maven</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>从项目的全局来看，maven的知识贯穿项目的一生，是时候深入了解一下maven了。</p>
+<h2 id="springboot-maven父子项目的构建、运行、打包"><a href="#springboot-maven父子项目的构建、运行、打包" class="headerlink" title="springboot+maven父子项目的构建、运行、打包"></a>springboot+maven父子项目的构建、运行、打包</h2><p><strong>感谢这些老师</strong> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/634098705">https://zhuanlan.zhihu.com/p/634098705</a><br>现在稍微大一点的项目都包含多个模块，那么这些模块之间的关系与上一层之间的关系如何呢，如何启动main启动全部模块，或者各个模块当成一个微服务呢。</p>
+<h3 id="maven创建父子依赖项目"><a href="#maven创建父子依赖项目" class="headerlink" title="maven创建父子依赖项目"></a>maven创建父子依赖项目</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Liu_wen_wen/article/details/126333130">https://blog.csdn.net/Liu_wen_wen/article/details/126333130</a></p>
+<ol>
+<li>创建父项目<br><img src="/../_posts/maven-general/4iPKzN7o1Q.jpg"><br>父项目下只有一个pom文件，此时通过Module创建子项目</li>
+<li>父子项目pom文件配置<br><img src="/../_posts/maven-general/JNkBKTI4MF.jpg"><br>父项目的&lt;packaging&gt;为pom方式，然后再&lt;modules&gt;模块里配置子模块<br>子项目&lt;parent&gt;里引用父项目</li>
+<li>子级项目相互引用<br><img src="/../_posts/maven-general/8bdpeeMUi0.jpg"></li>
+</ol>
+<h4 id="父项目的作用"><a href="#父项目的作用" class="headerlink" title="父项目的作用"></a>父项目的作用</h4><p>父项目用来组织子级项目，不需要写代码，可以将项目目录下的src直接删掉。</p>
+<h4 id="所有的jar包依赖必须在父级项目中pom-xml中引用"><a href="#所有的jar包依赖必须在父级项目中pom-xml中引用" class="headerlink" title="所有的jar包依赖必须在父级项目中pom.xml中引用"></a>所有的jar包依赖必须在父级项目中pom.xml中引用</h4><p>两种方式：</p>
+<ol>
+<li><p>子级的jar包依赖要保持一致，统一交给父级进行引入（dependecy&#x2F;ies）便于管理。</p>
+</li>
+<li><p>父级引用依赖之后，所有子级继承父级所有的jar包依赖，但是有些子级根本不需要某些jar包依赖，这时需要将所有子级的jar包依赖统一由父级进行引入和管理（dependencyManagement）（不做实际引用，只做管理），子级根据需要从父级那里进行引入。</p>
+</li>
+</ol>
+<h3 id="spring-boot-maven-plugin"><a href="#spring-boot-maven-plugin" class="headerlink" title="spring-boot-maven-plugin"></a>spring-boot-maven-plugin</h3><p>当我们创建一个springboot项目时，会发现其pom文件尾部有个&lt;plugin&gt;标签里面是这么个玩意，并且容易报错，这个插件下载不下来，导致无法打包等等。<br>那么，这个插件是用来干什么的咧</p>
+<h4 id="用不用这个插件的比较"><a href="#用不用这个插件的比较" class="headerlink" title="用不用这个插件的比较"></a>用不用这个插件的比较</h4><h5 id="使用这个插件"><a href="#使用这个插件" class="headerlink" title="使用这个插件"></a>使用这个插件</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean package  打包命令，成功之后生成一个jar包</span><br></pre></td></tr></table></figure>
+<p><img src="/./maven-general/packagewithout.jpg" alt="使用插件打包"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar 包名    可以启动项目</span><br></pre></td></tr></table></figure>
+<h5 id="去掉这个插件"><a href="#去掉这个插件" class="headerlink" title="去掉这个插件"></a>去掉这个插件</h5><p><img src="/./maven-general/packagewith.jpg" alt="不使用插件打包"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java -jar 包名    发现启动不了</span><br><span class="line">localhost:target xub$ java -jar maven-plugin-0.0.1-SNAPSHOT.jar </span><br><span class="line">maven-plugin-0.0.1-SNAPSHOT.jar中没有主清单属性</span><br></pre></td></tr></table></figure>
+<p>我的天啊，文件大小差这么大么，之前17.7MB，之后3KB，但是后者无法启动<br>原来，一般maven项目的打包命令，不会将依赖的jar包打包进去，只是放在jar包的同目录下，能够引用就可以了。<br>而使用插件，则是将依赖的jar包全部打包进去，该文件包含了所有的依赖和资源文件，可以在命令行或传统的java web服务器上启动运行。</p>
+<h3 id="maven中多模块项目只打成一个jar包"><a href="#maven中多模块项目只打成一个jar包" class="headerlink" title="maven中多模块项目只打成一个jar包"></a>maven中多模块项目只打成一个jar包</h3><p>项目：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiohao/p/15124725.html">https://www.cnblogs.com/xiohao/p/15124725.html</a><br><img src="/../_posts/maven-general/project.jpg"><br>start模块依赖所有的模块</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/11/03/javaStream/" rel="prev" title="javaStream">
+                  <i class="fa fa-angle-left"></i> javaStream
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">liuluc</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
