@@ -29,11 +29,18 @@
 <meta property="og:image" content="https://makerbug.github.io/_posts/maven-general/4iPKzN7o1Q.jpg">
 <meta property="og:image" content="https://makerbug.github.io/_posts/maven-general/JNkBKTI4MF.jpg">
 <meta property="og:image" content="https://makerbug.github.io/_posts/maven-general/8bdpeeMUi0.jpg">
+<meta property="og:image" content="https://makerbug.github.io/maven-general/i8d0wFXRnf.jpg">
+<meta property="og:image" content="https://makerbug.github.io/maven-general/Bo5KXtFbye.jpg">
+<meta property="og:image" content="https://makerbug.github.io/maven-general/YdbNiAhNSO.jpg">
+<meta property="og:image" content="https://makerbug.github.io/maven-general/54jWEznhWr.jpg">
+<meta property="og:image" content="https://makerbug.github.io/maven-general/DmoLKNLqhO.jpg">
+<meta property="og:image" content="https://makerbug.github.io/maven-general/7NpW9eO0tu.jpg">
 <meta property="og:image" content="https://makerbug.github.io/maven-general/packagewithout.jpg">
 <meta property="og:image" content="https://makerbug.github.io/maven-general/packagewith.jpg">
 <meta property="og:image" content="https://makerbug.github.io/_posts/maven-general/project.jpg">
+<meta property="og:image" content="https://makerbug.github.io/maven-general/D8onlsuSbK.jpg">
 <meta property="article:published_time" content="2023-11-08T01:49:20.000Z">
-<meta property="article:modified_time" content="2023-11-08T05:30:47.691Z">
+<meta property="article:modified_time" content="2023-11-08T06:33:32.289Z">
 <meta property="article:author" content="liuluc">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -120,7 +127,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#springboot-maven%E7%88%B6%E5%AD%90%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E5%BB%BA%E3%80%81%E8%BF%90%E8%A1%8C%E3%80%81%E6%89%93%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">springboot+maven父子项目的构建、运行、打包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven%E5%88%9B%E5%BB%BA%E7%88%B6%E5%AD%90%E4%BE%9D%E8%B5%96%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.1.</span> <span class="nav-text">maven创建父子依赖项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%88%B6%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.1.1.</span> <span class="nav-text">父项目的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%80%E6%9C%89%E7%9A%84jar%E5%8C%85%E4%BE%9D%E8%B5%96%E5%BF%85%E9%A1%BB%E5%9C%A8%E7%88%B6%E7%BA%A7%E9%A1%B9%E7%9B%AE%E4%B8%ADpom-xml%E4%B8%AD%E5%BC%95%E7%94%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">所有的jar包依赖必须在父级项目中pom.xml中引用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring-boot-maven-plugin"><span class="nav-number">1.2.</span> <span class="nav-text">spring-boot-maven-plugin</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E4%B8%8D%E7%94%A8%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">1.2.1.</span> <span class="nav-text">用不用这个插件的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">使用这个插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8E%BB%E6%8E%89%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">去掉这个插件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maven%E4%B8%AD%E5%A4%9A%E6%A8%A1%E5%9D%97%E9%A1%B9%E7%9B%AE%E5%8F%AA%E6%89%93%E6%88%90%E4%B8%80%E4%B8%AAjar%E5%8C%85"><span class="nav-number">1.3.</span> <span class="nav-text">maven中多模块项目只打成一个jar包</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#springboot-maven%E7%88%B6%E5%AD%90%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E5%BB%BA%E3%80%81%E8%BF%90%E8%A1%8C%E3%80%81%E6%89%93%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">springboot+maven父子项目的构建、运行、打包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven%E5%88%9B%E5%BB%BA%E7%88%B6%E5%AD%90%E4%BE%9D%E8%B5%96%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.1.</span> <span class="nav-text">maven创建父子依赖项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%88%B6%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.1.1.</span> <span class="nav-text">父项目的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%80%E6%9C%89%E7%9A%84jar%E5%8C%85%E4%BE%9D%E8%B5%96%E5%BF%85%E9%A1%BB%E5%9C%A8%E7%88%B6%E7%BA%A7%E9%A1%B9%E7%9B%AE%E4%B8%ADpom-xml%E4%B8%AD%E5%BC%95%E7%94%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">所有的jar包依赖必须在父级项目中pom.xml中引用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring-boot-maven-plugin"><span class="nav-number">1.2.</span> <span class="nav-text">spring-boot-maven-plugin</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E4%B8%8D%E7%94%A8%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">1.2.1.</span> <span class="nav-text">用不用这个插件的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">使用这个插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8E%BB%E6%8E%89%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">去掉这个插件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maven%E4%B8%AD%E5%A4%9A%E6%A8%A1%E5%9D%97%E9%A1%B9%E7%9B%AE%E5%8F%AA%E6%89%93%E6%88%90%E4%B8%80%E4%B8%AAjar%E5%8C%85"><span class="nav-number">1.3.</span> <span class="nav-text">maven中多模块项目只打成一个jar包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maven%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">maven多环境配置</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -200,7 +207,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-11-08 09:49:20 / 修改时间：13:30:47" itemprop="dateCreated datePublished" datetime="2023-11-08T09:49:20+08:00">2023-11-08</time>
+      <time title="创建时间：2023-11-08 09:49:20 / 修改时间：14:33:32" itemprop="dateCreated datePublished" datetime="2023-11-08T09:49:20+08:00">2023-11-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -213,6 +220,28 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
 </div>
 
             <div class="post-description">maven</div>
@@ -233,9 +262,14 @@
 <h4 id="父项目的作用"><a href="#父项目的作用" class="headerlink" title="父项目的作用"></a>父项目的作用</h4><p>父项目用来组织子级项目，不需要写代码，可以将项目目录下的src直接删掉。</p>
 <h4 id="所有的jar包依赖必须在父级项目中pom-xml中引用"><a href="#所有的jar包依赖必须在父级项目中pom-xml中引用" class="headerlink" title="所有的jar包依赖必须在父级项目中pom.xml中引用"></a>所有的jar包依赖必须在父级项目中pom.xml中引用</h4><p>两种方式：</p>
 <ol>
-<li><p>子级的jar包依赖要保持一致，统一交给父级进行引入（dependecy&#x2F;ies）便于管理。</p>
+<li><p>子级的jar包依赖要保持一致，统一交给父级进行引入（dependecy&#x2F;ies）便于管理。<br><img src="/./maven-general/i8d0wFXRnf.jpg" alt="父项目"></p>
+<blockquote>
+<p>pom中&lt;dependency&gt;和&lt;properties&gt;的区别<br>&lt;dependency&gt;标签用以声明项目的依赖库，定义需要导入的外部依赖库、版本号、包名称等信息，使得项目能够正确编译和运行。<br>&lt;properties&gt;标签用于定义项目中需要使用的变量,这些变量可以在POM.xml文件的其他地方引用，方便统一管理和维护项目中的属性</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;project&gt;</span><br><span class="line">  &lt;groupId&gt;com.mycompany.app&lt;/grou Id&gt;</span><br><span class="line">  &lt;artifactId&gt;my-project&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;junit.version&gt;5.7.2&lt;/junit.version&gt;</span><br><span class="line">    &lt;log4j.version&gt;2.15.0&lt;/log4j.version&gt;</span><br><span class="line">    &lt;my.constant&gt;123&lt;/my.constant&gt;</span><br><span class="line">    &lt;my.path&gt;/my/project/path&lt;/my.path&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line">  ...</span><br><span class="line">&lt;/project&gt;</span><br><span class="line"></span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">  &lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;$&#123;junit.version&#125;&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">  &lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;$&#123;log4j.version&#125;&lt;/version&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;  </span><br><span class="line"></span><br><span class="line">作者：xyy123</span><br><span class="line">链接：https://juejin.cn/post/7236748368777248805</span><br><span class="line">来源：稀土掘金</span><br></pre></td></tr></table></figure>
+<p>扯远了！！现在回来<br>可以发现，子级项目继承了父级的所有依赖<br><img src="/./maven-general/Bo5KXtFbye.jpg" alt="maven"></p>
 </li>
-<li><p>父级引用依赖之后，所有子级继承父级所有的jar包依赖，但是有些子级根本不需要某些jar包依赖，这时需要将所有子级的jar包依赖统一由父级进行引入和管理（dependencyManagement）（不做实际引用，只做管理），子级根据需要从父级那里进行引入。</p>
+<li><p>父级引用依赖之后，所有子级继承父级所有的jar包依赖，但是有些子级根本不需要某些jar包依赖，这时需要将所有子级的jar包依赖统一由父级进行引入和管理（dependencyManagement）（不做实际引用，只做管理），子级根据需要从父级那里进行引入。<br><img src="/./maven-general/YdbNiAhNSO.jpg"><br>刷新pom之后,可以发现父级和子级都没有了依赖<br><img src="/./maven-general/54jWEznhWr.jpg"><br>如果子级要引用父级管理的jar包，可以在子级pom中手动引入<br><img src="/./maven-general/DmoLKNLqhO.jpg"><br><img src="/./maven-general/7NpW9eO0tu.jpg"></p>
 </li>
 </ol>
 <h3 id="spring-boot-maven-plugin"><a href="#spring-boot-maven-plugin" class="headerlink" title="spring-boot-maven-plugin"></a>spring-boot-maven-plugin</h3><p>当我们创建一个springboot项目时，会发现其pom文件尾部有个&lt;plugin&gt;标签里面是这么个玩意，并且容易报错，这个插件下载不下来，导致无法打包等等。<br>那么，这个插件是用来干什么的咧</p>
@@ -246,6 +280,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java -jar 包名    发现启动不了</span><br><span class="line">localhost:target xub$ java -jar maven-plugin-0.0.1-SNAPSHOT.jar </span><br><span class="line">maven-plugin-0.0.1-SNAPSHOT.jar中没有主清单属性</span><br></pre></td></tr></table></figure>
 <p>我的天啊，文件大小差这么大么，之前17.7MB，之后3KB，但是后者无法启动<br>原来，一般maven项目的打包命令，不会将依赖的jar包打包进去，只是放在jar包的同目录下，能够引用就可以了。<br>而使用插件，则是将依赖的jar包全部打包进去，该文件包含了所有的依赖和资源文件，可以在命令行或传统的java web服务器上启动运行。</p>
 <h3 id="maven中多模块项目只打成一个jar包"><a href="#maven中多模块项目只打成一个jar包" class="headerlink" title="maven中多模块项目只打成一个jar包"></a>maven中多模块项目只打成一个jar包</h3><p>项目：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiohao/p/15124725.html">https://www.cnblogs.com/xiohao/p/15124725.html</a><br><img src="/../_posts/maven-general/project.jpg"><br>start模块依赖所有的模块</p>
+<h3 id="maven多环境配置"><a href="#maven多环境配置" class="headerlink" title="maven多环境配置"></a>maven多环境配置</h3><p>刚入职的时候，接触项目还不了解由多环境这个东西，也不知道是在哪里配置的，偶然看到解决了我很大的疑惑，<strong>谢谢知识的贡献者</strong>：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7054348294083854343">https://juejin.cn/post/7054348294083854343</a><br>日常开发过程中，应用需要在多个环境下进行部署测试。例如在日常开发中，我们希望每个依赖的应用都是快照版，然后发布出去的应用依赖的都是发布版<br><img src="/./maven-general/D8onlsuSbK.jpg"><br>假设有一下三个环境：</p>
 
     </div>
 
@@ -289,6 +324,40 @@
     </span>
     <span class="author" itemprop="copyrightHolder">liuluc</span>
   </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">NaNm</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">NaN:aN</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
@@ -318,6 +387,7 @@
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
