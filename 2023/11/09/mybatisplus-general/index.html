@@ -19,28 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"makerbug.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="SQL分页查询详解">
+    <meta name="description" content="mybatisPlus杂">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql分页查询">
-<meta property="og:url" content="https://makerbug.github.io/2023/10/23/sql-pagination-query/index.html">
+<meta property="og:title" content="mybatisplus-general">
+<meta property="og:url" content="https://makerbug.github.io/2023/11/09/mybatisplus-general/index.html">
 <meta property="og:site_name" content="这是liuluc&#39;s个人博客">
-<meta property="og:description" content="SQL分页查询详解">
+<meta property="og:description" content="mybatisPlus杂">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-23T03:22:21.000Z">
-<meta property="article:modified_time" content="2023-11-01T03:31:11.137Z">
+<meta property="og:image" content="https://makerbug.github.io/mybatisplus-general/tp7gGt5ss8.jpg">
+<meta property="article:published_time" content="2023-11-09T06:05:44.000Z">
+<meta property="article:modified_time" content="2023-11-09T07:36:10.868Z">
 <meta property="article:author" content="liuluc">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://makerbug.github.io/mybatisplus-general/tp7gGt5ss8.jpg">
 
 
-<link rel="canonical" href="https://makerbug.github.io/2023/10/23/sql-pagination-query/">
+<link rel="canonical" href="https://makerbug.github.io/2023/11/09/mybatisplus-general/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/10/23/sql-pagination-query/","path":"2023/10/23/sql-pagination-query/","title":"Mysql分页查询"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/11/09/mybatisplus-general/","path":"2023/11/09/mybatisplus-general/","title":"mybatisplus-general"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Mysql分页查询 | 这是liuluc's个人博客</title>
+<title>mybatisplus-general | 这是liuluc's个人博客</title>
   
 
 
@@ -113,7 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mybatis%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">Mybatis接收参数</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CRUD%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.</span> <span class="nav-text">CRUD接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Mapper-CRUD"><span class="nav-number">1.1.</span> <span class="nav-text">Mapper CRUD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service-CRUD"><span class="nav-number">1.2.</span> <span class="nav-text">Service CRUD</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%9E%84%E9%80%A0%E5%99%A8wrapper"><span class="nav-number">2.</span> <span class="nav-text">条件构造器wrapper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Abstractwrapper%E4%B8%AD%E7%94%A8%E4%BA%8E%E6%9E%84%E5%BB%BASQL%E4%B8%ADwhere%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%83%A8%E5%88%86%E5%88%97%E4%B8%BE"><span class="nav-number">2.1.</span> <span class="nav-text">Abstractwrapper中用于构建SQL中where条件的方法进行部分列举</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Condition"><span class="nav-number">2.2.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lambda%E6%9D%A1%E4%BB%B6%E6%9E%84%E9%80%A0%E5%99%A8"><span class="nav-number">2.3.</span> <span class="nav-text">Lambda条件构造器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BD%93%E5%AF%B9%E8%B1%A1%E8%BD%ACQueryWrapper-%E4%BE%BF%E6%8D%B7%E5%AE%9E%E7%8E%B0%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="nav-number">3.</span> <span class="nav-text">实体对象转QueryWrapper 便捷实现条件查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text">更新和删除操作</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -163,7 +165,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://makerbug.github.io/2023/10/23/sql-pagination-query/">
+    <link itemprop="mainEntityOfPage" href="https://makerbug.github.io/2023/11/09/mybatisplus-general/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -176,12 +178,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Mysql分页查询 | 这是liuluc's个人博客">
-      <meta itemprop="description" content="SQL分页查询详解">
+      <meta itemprop="name" content="mybatisplus-general | 这是liuluc's个人博客">
+      <meta itemprop="description" content="mybatisPlus杂">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Mysql分页查询
+          mybatisplus-general
         </h1>
 
         <div class="post-meta-container">
@@ -191,15 +193,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-10-23 11:22:21" itemprop="dateCreated datePublished" datetime="2023-10-23T11:22:21+08:00">2023-10-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-01 11:31:11" itemprop="dateModified" datetime="2023-11-01T11:31:11+08:00">2023-11-01</time>
+      <time title="创建时间：2023-11-09 14:05:44 / 修改时间：15:36:10" itemprop="dateCreated datePublished" datetime="2023-11-09T14:05:44+08:00">2023-11-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -207,7 +203,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/sql/" itemprop="url" rel="index"><span itemprop="name">sql</span></a>
+          <a href="/categories/mybatisplus/" itemprop="url" rel="index"><span itemprop="name">mybatisplus</span></a>
         </span>
     </span>
 
@@ -225,62 +221,57 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span></span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>NaN:aN</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
-            <div class="post-description">SQL分页查询详解</div>
+            <div class="post-description">mybatisPlus杂</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><strong>基本分页查询语法</strong><br>SQL中执行分页查询通常使用LIMIT和OFFSET子句。这两个子句用于指定要返回的记录数和开始检索的位置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM user</span><br><span class="line">LIMIT number_of_records</span><br><span class="line">OFFSET offset_value</span><br></pre></td></tr></table></figure>
-<ul>
-<li>number_of records:每页返回的记录数</li>
-<li>offset_value: 从哪一行开始检索数据</li>
-</ul>
-<p><strong>Mybatis分页查询类型</strong></p>
-<ul>
-<li>物理分页<br>在数据库层面进行的分页，通过SQL语句直接从数据库中查询出需要的语句。</li>
-<li>内存分页<br>将所有数据查询出来之后，再在内存中进行分页</li>
-</ul>
-<p><strong>Mybatis进行分页查询</strong></p>
-<p><strong>物理分页</strong></p>
-<ul>
-<li>PageHelper分页插件<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 设置分页信息</span><br><span class="line">PageHelper.startPage(page, size);</span><br><span class="line">List&lt;User&gt; users = userMapper.selectAll();</span><br></pre></td></tr></table></figure>
-<strong>原理</strong></li>
-</ul>
-<ol>
-<li>当调用PageHelper startPage()时，PageHelper会创建一个Page对象，并将其报错到ThreadLocal中。这个Page对象包含了分页信息，如页码和每页的数量。</li>
-<li>当调用Mapper的查询方法时，Mybatis会生成原始的SQL语句。在这个过程中，PageHelper会通过拦截器拦截SQL语句的生成过程。</li>
-<li>在拦截器中，PageHelper会从ThreadLocal中获取Page对象，然后根据Page对象中的分页信息，修改原始SQL语句，添加Limit子句。</li>
-<li>最后，Mybatis执行修改后的SQL语句，从数据库中查询出分页数据。<blockquote>
-<p><strong>注意事项</strong>：<br><strong>PageHelper的startPage方法只对紧跟着的第一个SQL语句生效，也就是说，如果我们在调用startPage方法之后执行了多个SQL语句，那么只有第一个SQL语句会进行分页查询，其他的SQL语句还是会查询所有的数据。</strong></p>
-</blockquote>
-</li>
+    <div class="post-body" itemprop="articleBody"><h3 id="CRUD接口"><a href="#CRUD接口" class="headerlink" title="CRUD接口"></a>CRUD接口</h3><p>mp封装了一些最基础的CRUD方法，只需要直接继承mp提供的接口，无需编写任何SQL，即可食用。<br>mp提供了两套接口，分别是Mapper CRUD接口和Service CRUD接口。<br>mp还提供了条件构造器Wrapper，可以方便地组装SQL语句中的where条件。</p>
+<h4 id="Mapper-CRUD"><a href="#Mapper-CRUD" class="headerlink" title="Mapper CRUD"></a>Mapper CRUD</h4><p>定义好实体类，然后创建一个接口，继承mp提供的baseMapper，即可使用。<br>mp会在mybatis启动时，自动解析实体类和表的映射关系，并注入带有通用CRUD方法的mapper</p>
+<h4 id="Service-CRUD"><a href="#Service-CRUD" class="headerlink" title="Service CRUD"></a>Service CRUD</h4><p>Service CRUD是Service层的，只需要编写一个接口，继承IService，并创建一个接口实现类，即可使用</p>
+<p><strong>区别：两个CURD的功能大同小异，但是Iservice支持了更多的批量化操作</strong></p>
+<h3 id="条件构造器wrapper"><a href="#条件构造器wrapper" class="headerlink" title="条件构造器wrapper"></a>条件构造器wrapper</h3><h4 id="Abstractwrapper中用于构建SQL中where条件的方法进行部分列举"><a href="#Abstractwrapper中用于构建SQL中where条件的方法进行部分列举" class="headerlink" title="Abstractwrapper中用于构建SQL中where条件的方法进行部分列举"></a>Abstractwrapper中用于构建SQL中where条件的方法进行部分列举</h4><ol>
+<li>eq：equals，等于</li>
+<li>allEq：all equals，全等于</li>
+<li>ne：not equals，不等于</li>
+<li>gt：greater than，大于</li>
+<li>ge：greater than or equals，大于等于</li>
+<li>lt：less than，小于</li>
+<li>le：less than or equals，小于等于</li>
+<li>between</li>
+<li>not between</li>
+<li><strong>like</strong>：匹配两边 %刘%</li>
+<li>likeRight：模糊匹配右边 刘%</li>
+<li>likeLeft：模糊匹配左边 %刘</li>
+<li>notLike</li>
+<li><strong>and</strong></li>
+<li><strong>or</strong></li>
 </ol>
-<p><strong>内存分页</strong></p>
-<ul>
-<li><strong>Page对象</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class UserService &#123;</span><br><span class="line">    @Autowired</span><br><span class="line">    private UserMapper userMapper;</span><br><span class="line"> </span><br><span class="line">    public List&lt;User&gt; getUsers(int page, int size) &#123;</span><br><span class="line">        // 查询所有数据</span><br><span class="line">        List&lt;User&gt; allUsers = userMapper.selectAll();</span><br><span class="line">        // 创建Page对象</span><br><span class="line">        Page&lt;User&gt; userPage = new Page&lt;&gt;(page, size);</span><br><span class="line">        // 设置数据</span><br><span class="line">        userPage.setRecords(allUsers);</span><br><span class="line">        // 获取当前页的数据</span><br><span class="line">        return userPage.getRecords();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>RowBounds对象</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//我们需要在Mapper接口中定义一个使用RowBounds的查询方法：</span><br><span class="line">@Mapper</span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line">    List&lt;User&gt; selectAll(RowBounds rowBounds);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//在Service层中，我们可以调用这个方法，并传入一个RowBounds对象来进行分页查询：</span><br><span class="line">@Service</span><br><span class="line">public class UserService &#123;</span><br><span class="line">    @Autowired</span><br><span class="line">    private UserMapper userMapper;</span><br><span class="line"> </span><br><span class="line">    public List&lt;User&gt; getUsers(int page, int size) &#123;</span><br><span class="line">        // 创建RowBounds对象</span><br><span class="line">        RowBounds rowBounds = new RowBounds((page - 1) * size, size);</span><br><span class="line">        // 调用Mapper接口的查询方法</span><br><span class="line">        return userMapper.selectAll(rowBounds);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a target="_blank" rel="noopener" href="https://blog.csdn.net/l_s_r/article/details/133960882">https://blog.csdn.net/l_s_r/article/details/133960882</a></li>
-</ul>
-<h3 id="Mybatis接收参数"><a href="#Mybatis接收参数" class="headerlink" title="Mybatis接收参数"></a>Mybatis接收参数</h3><ol>
-<li>通过实体对象接收</li>
-</ol>
+<h4 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h4><p>条件构造器的诸多方法中，均可以指定一个boolean类型的参数condition,用来决定该条件是否加入最后生成的where语句中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String name = &quot;黄&quot;; // 假设name变量是一个外部传入的参数</span><br><span class="line">QueryWrapper&lt;User&gt; wrapper = new QueryWrapper&lt;&gt;();</span><br><span class="line">wrapper.like(StringUtils.hasText(name), &quot;name&quot;, name);</span><br><span class="line">// 仅当 StringUtils.hasText(name) 为 true 时, 会拼接这个like语句到WHERE中</span><br><span class="line">// 其实就是对下面代码的简化</span><br><span class="line">if (StringUtils.hasText(name)) &#123;</span><br><span class="line"> wrapper.like(&quot;name&quot;, name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Lambda条件构造器"><a href="#Lambda条件构造器" class="headerlink" title="Lambda条件构造器"></a>Lambda条件构造器</h4><p><img src="/./mybatisplus-general/tp7gGt5ss8.jpg"><br>lambda条件构造器，支持lambda表达式，它可以直接以实体类的方法引用来指定列</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void testLambda() &#123;</span><br><span class="line"> LambdaQueryWrapper&lt;User&gt; wrapper = new LambdaQueryWrapper&lt;&gt;();</span><br><span class="line"> wrapper.like(User::getName, &quot;黄&quot;).lt(User::getAge, 30);</span><br><span class="line"> List&lt;User&gt; users = userMapper.selectList(wrapper);</span><br><span class="line"> users.forEach(System.out::println);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>普通的条件构造器，列名是用字符串的形式指定，无法在编译期进行列名合法性检查，不如用lambda构造器来的优雅。</p>
+<h3 id="实体对象转QueryWrapper-便捷实现条件查询"><a href="#实体对象转QueryWrapper-便捷实现条件查询" class="headerlink" title="实体对象转QueryWrapper 便捷实现条件查询"></a>实体对象转QueryWrapper 便捷实现条件查询</h3><p>在构建wrapper的时候，有时候会传入一个实体类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QueryWrapper&lt;User&gt; queryWrapper = new QueryWrapper&lt;User&gt;(User);</span><br></pre></td></tr></table></figure>
+<p>这个实体类有些属性上面有注解。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@TableField(condition =&quot;%s&amp;lt;#&#123;%s&#125;&quot;)</span><br></pre></td></tr></table></figure>
+<p>这是什么意思呢</p>
+<h3 id="更新和删除操作"><a href="#更新和删除操作" class="headerlink" title="更新和删除操作"></a>更新和删除操作</h3><p>根据实体entity和条件构造器wrapper进行更新，<br>看困了 换个东西看看</p>
 
     </div>
 
@@ -294,13 +285,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/10/23/java-develop-standard/" rel="prev" title="java开发规范">
-                  <i class="fa fa-angle-left"></i> java开发规范
+                <a href="/2023/11/08/db-general/" rel="prev" title="db-general">
+                  <i class="fa fa-angle-left"></i> db-general
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/10/23/eureka/" rel="next" title="eureka详解与实战">
-                  eureka详解与实战 <i class="fa fa-angle-right"></i>
+                <a href="/2023/11/09/nginx-general/" rel="next" title="nginx-general">
+                  nginx-general <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
