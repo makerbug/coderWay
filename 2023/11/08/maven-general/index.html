@@ -39,8 +39,10 @@
 <meta property="og:image" content="https://makerbug.github.io/maven-general/packagewith.jpg">
 <meta property="og:image" content="https://makerbug.github.io/_posts/maven-general/project.jpg">
 <meta property="og:image" content="https://makerbug.github.io/maven-general/D8onlsuSbK.jpg">
+<meta property="og:image" content="https://makerbug.github.io/maven-general/EmlmlgnQMg.jpg">
+<meta property="og:image" content="https://makerbug.github.io/maven-general/8Tr9iNNc3v.jpg">
 <meta property="article:published_time" content="2023-11-08T01:49:20.000Z">
-<meta property="article:modified_time" content="2023-11-08T06:33:32.289Z">
+<meta property="article:modified_time" content="2023-11-09T03:11:53.484Z">
 <meta property="article:author" content="liuluc">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -140,7 +142,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -205,9 +207,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-11-08 09:49:20 / 修改时间：14:33:32" itemprop="dateCreated datePublished" datetime="2023-11-08T09:49:20+08:00">2023-11-08</time>
+      <time title="创建时间：2023-11-08 09:49:20" itemprop="dateCreated datePublished" datetime="2023-11-08T09:49:20+08:00">2023-11-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-09 11:11:53" itemprop="dateModified" datetime="2023-11-09T11:11:53+08:00">2023-11-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -233,14 +241,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.6k</span>
+      <span>4.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>8 分钟</span>
     </span>
 </div>
 
@@ -280,7 +288,13 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java -jar 包名    发现启动不了</span><br><span class="line">localhost:target xub$ java -jar maven-plugin-0.0.1-SNAPSHOT.jar </span><br><span class="line">maven-plugin-0.0.1-SNAPSHOT.jar中没有主清单属性</span><br></pre></td></tr></table></figure>
 <p>我的天啊，文件大小差这么大么，之前17.7MB，之后3KB，但是后者无法启动<br>原来，一般maven项目的打包命令，不会将依赖的jar包打包进去，只是放在jar包的同目录下，能够引用就可以了。<br>而使用插件，则是将依赖的jar包全部打包进去，该文件包含了所有的依赖和资源文件，可以在命令行或传统的java web服务器上启动运行。</p>
 <h3 id="maven中多模块项目只打成一个jar包"><a href="#maven中多模块项目只打成一个jar包" class="headerlink" title="maven中多模块项目只打成一个jar包"></a>maven中多模块项目只打成一个jar包</h3><p>项目：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiohao/p/15124725.html">https://www.cnblogs.com/xiohao/p/15124725.html</a><br><img src="/../_posts/maven-general/project.jpg"><br>start模块依赖所有的模块</p>
-<h3 id="maven多环境配置"><a href="#maven多环境配置" class="headerlink" title="maven多环境配置"></a>maven多环境配置</h3><p>刚入职的时候，接触项目还不了解由多环境这个东西，也不知道是在哪里配置的，偶然看到解决了我很大的疑惑，<strong>谢谢知识的贡献者</strong>：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7054348294083854343">https://juejin.cn/post/7054348294083854343</a><br>日常开发过程中，应用需要在多个环境下进行部署测试。例如在日常开发中，我们希望每个依赖的应用都是快照版，然后发布出去的应用依赖的都是发布版<br><img src="/./maven-general/D8onlsuSbK.jpg"><br>假设有一下三个环境：</p>
+<h3 id="maven多环境配置"><a href="#maven多环境配置" class="headerlink" title="maven多环境配置"></a>maven多环境配置</h3><p>刚入职的时候，接触项目还不了解由多环境这个东西，也不知道是在哪里配置的，偶然看到解决了我很大的疑惑，<strong>谢谢知识的贡献者</strong>：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7054348294083854343">https://juejin.cn/post/7054348294083854343</a><br>日常开发过程中，应用需要在多个环境下进行部署测试。例如在日常开发中，我们希望每个依赖的应用都是快照版，然后发布出去的应用依赖的都是发布版<br><img src="/./maven-general/D8onlsuSbK.jpg"><br>假设有以下三个环境：<br><img src="/./maven-general/EmlmlgnQMg.jpg"><br>Springboot提供了一下配置，可以让我们指定使用哪个配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    profiles:</span><br><span class="line">        active: dev</span><br></pre></td></tr></table></figure>
+<p>如上所示，但是我们每次切换环境时都得手动修改，有点麻烦，所以我们将这个值配置成变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    profiles:</span><br><span class="line">        active: &#x27;@env@&#x27;</span><br></pre></td></tr></table></figure>
+<p>那么这个值在哪取呢，在父项目的pom文件里</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--配置不同的profile，对应不同的生产环境--&gt;</span><br><span class="line">&lt;profiles&gt;</span><br><span class="line">    &lt;profile&gt;</span><br><span class="line">        &lt;!--开发--&gt;</span><br><span class="line">        &lt;id&gt;dev&lt;/id&gt;</span><br><span class="line">        &lt;activation&gt;</span><br><span class="line">            &lt;!--默认开发环境--&gt;</span><br><span class="line">            &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">        &lt;/activation&gt;</span><br><span class="line">        &lt;properties&gt;</span><br><span class="line">            &lt;!--      自定义的变量名称env作为标签，标签内是我们配置文件不同环境的后缀          --&gt;</span><br><span class="line">            &lt;env&gt;dev&lt;/env&gt;</span><br><span class="line">        &lt;/properties&gt;</span><br><span class="line">    &lt;/profile&gt;</span><br><span class="line">    &lt;profile&gt;</span><br><span class="line">        &lt;!--生产--&gt;</span><br><span class="line">        &lt;id&gt;pro&lt;/id&gt;</span><br><span class="line">        &lt;properties&gt;</span><br><span class="line">            &lt;env&gt;pro&lt;/env&gt;</span><br><span class="line">        &lt;/properties&gt;</span><br><span class="line">    &lt;/profile&gt;</span><br><span class="line">    &lt;profile&gt;</span><br><span class="line">        &lt;!--测试--&gt;</span><br><span class="line">        &lt;id&gt;test&lt;/id&gt;</span><br><span class="line">        &lt;properties&gt;</span><br><span class="line">            &lt;env&gt;test&lt;/env&gt;</span><br><span class="line">        &lt;/properties&gt;</span><br><span class="line">    &lt;/profile&gt;</span><br><span class="line">&lt;/profiles&gt;</span><br><span class="line"></span><br><span class="line">&lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;!--   springboot使用maven打包的插件          --&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">    &lt;/plugins&gt;</span><br><span class="line">    &lt;resources&gt;</span><br><span class="line">        &lt;resource&gt;</span><br><span class="line">            &lt;!--   指定配置文件的位置  --&gt;</span><br><span class="line">            &lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">            &lt;includes&gt;</span><br><span class="line">                &lt;!--   读取resources下的所有文件，include表示指定文件内的，相对的还有excludes ，排除其下的文件 --&gt;</span><br><span class="line">                &lt;include&gt;**/*&lt;/include&gt;</span><br><span class="line">            &lt;/includes&gt;</span><br><span class="line">            &lt;!-- 开启替换标签，比如我们的&#x27;@env&#x27;就是通过这个替换的         --&gt;</span><br><span class="line">            &lt;filtering&gt;true&lt;/filtering&gt;</span><br><span class="line">        &lt;/resource&gt;</span><br><span class="line">    &lt;/resources&gt;</span><br><span class="line">&lt;/build&gt;</span><br><span class="line"></span><br><span class="line">作者：我犟不过你</span><br><span class="line">链接：https://juejin.cn/post/7054348294083854343</span><br></pre></td></tr></table></figure>
+<p>要特别注意还得在&lt;build&gt;里配置一下标签替换，之后就可以在右侧maven界面中选择是哪个环境了，该说不说，稀土掘金的博客比csdn好多了，无论是排版还是质量上(个人看法+个盾)。<br><img src="/./maven-general/8Tr9iNNc3v.jpg"></p>
 
     </div>
 
@@ -299,6 +313,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2023/11/08/db-general/" rel="next" title="db-general">
+                  db-general <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>

@@ -19,28 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"makerbug.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="概述前端登陆成功，后端返回一个token，前端将token保存在本地，在接下来的所有请求中，前端都将带上此token用作身份识别。 目前生成token的方式比较多的是JWT">
+    <meta name="description" content="数据库杂七杂八的东西">
 <meta property="og:type" content="article">
-<meta property="og:title" content="network-token">
-<meta property="og:url" content="https://makerbug.github.io/2023/10/27/network-token/index.html">
+<meta property="og:title" content="db-general">
+<meta property="og:url" content="https://makerbug.github.io/2023/11/08/db-general/index.html">
 <meta property="og:site_name" content="这是liuluc&#39;s个人博客">
-<meta property="og:description" content="概述前端登陆成功，后端返回一个token，前端将token保存在本地，在接下来的所有请求中，前端都将带上此token用作身份识别。 目前生成token的方式比较多的是JWT">
+<meta property="og:description" content="数据库杂七杂八的东西">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-27T06:42:31.000Z">
-<meta property="article:modified_time" content="2023-10-30T07:20:56.141Z">
+<meta property="article:published_time" content="2023-11-08T09:04:19.000Z">
+<meta property="article:modified_time" content="2023-11-09T03:12:21.085Z">
 <meta property="article:author" content="liuluc">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://makerbug.github.io/2023/10/27/network-token/">
+<link rel="canonical" href="https://makerbug.github.io/2023/11/08/db-general/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/10/27/network-token/","path":"2023/10/27/network-token/","title":"network-token"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/11/08/db-general/","path":"2023/11/08/db-general/","title":"db-general"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>network-token | 这是liuluc's个人博客</title>
+<title>db-general | 这是liuluc's个人博客</title>
   
 
 
@@ -113,7 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#count-1-count-count-%E5%AD%97%E6%AE%B5-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">count(1),count(*),count(字段)的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AB%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%AA%E7%A7%8D%E6%80%A7%E8%83%BD%E6%9C%80%E5%A5%BD"><span class="nav-number">1.2.</span> <span class="nav-text">哪种性能最好</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#count-%E4%B8%BB%E9%94%AE%E5%AD%97%E6%AE%B5-%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">count(主键字段)执行过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#count-%E5%AD%97%E6%AE%B5-%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">1.4.</span> <span class="nav-text">count(字段)的执行过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#count-1-%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">1.5.</span> <span class="nav-text">count(1)的执行过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#count-%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">1.6.</span> <span class="nav-text">count(*)执行过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -163,7 +163,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://makerbug.github.io/2023/10/27/network-token/">
+    <link itemprop="mainEntityOfPage" href="https://makerbug.github.io/2023/11/08/db-general/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -176,12 +176,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="network-token | 这是liuluc's个人博客">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="db-general | 这是liuluc's个人博客">
+      <meta itemprop="description" content="数据库杂七杂八的东西">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          network-token
+          db-general
         </h1>
 
         <div class="post-meta-container">
@@ -192,14 +192,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-10-27 14:42:31" itemprop="dateCreated datePublished" datetime="2023-10-27T14:42:31+08:00">2023-10-27</time>
+      <time title="创建时间：2023-11-08 17:04:19" itemprop="dateCreated datePublished" datetime="2023-11-08T17:04:19+08:00">2023-11-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-30 15:20:56" itemprop="dateModified" datetime="2023-10-30T15:20:56+08:00">2023-10-30</time>
+      <time title="修改时间：2023-11-09 11:12:21" itemprop="dateModified" datetime="2023-11-09T11:12:21+08:00">2023-11-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -207,7 +207,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+          <a href="/categories/db/" itemprop="url" rel="index"><span itemprop="name">db</span></a>
         </span>
     </span>
 
@@ -225,25 +225,43 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span></span>
+      <span>869</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>NaN:aN</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
+            <div class="post-description">数据库杂七杂八的东西</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>前端登陆成功，后端返回一个token，前端将token保存在本地，在接下来的所有请求中，前端都将带上此token用作身份识别。</p>
-<p>目前生成token的方式比较多的是JWT</p>
+    <div class="post-body" itemprop="articleBody"><h3 id="count-1-count-count-字段-的区别"><a href="#count-1-count-count-字段-的区别" class="headerlink" title="count(1),count(*),count(字段)的区别"></a>count(1),count(*),count(字段)的区别</h3><h4 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h4><ol>
+<li>count(*):统计所有行数，包括为null的行，(不单会进行全表扫描，也会对表的每个字段进行扫描。)</li>
+<li>count(1):相当于新增了一个字段，这个字段所有行的值都为1</li>
+<li>count(列名):查询列名那一列，不包括null</li>
+</ol>
+<h4 id="哪种性能最好"><a href="#哪种性能最好" class="headerlink" title="哪种性能最好"></a>哪种性能最好</h4><p><strong>count(*)&#x3D;count(1)&gt;count(主键字段)&gt;count(字段)</strong></p>
+<h4 id="count-主键字段-执行过程"><a href="#count-主键字段-执行过程" class="headerlink" title="count(主键字段)执行过程"></a>count(主键字段)执行过程</h4><p>在通过count（）函数统计有多少个记录时，MySQL server层会维护一个名叫count的变量。<br>server层会循环向InnoDB读取一条记录，如果count函数指定的参数不为null，那么就会将变量count+1，直到复合条件的记录被读完。</p>
+<blockquote>
+<p>InnoDB通过B+数来保持记录，根据索引的类型又分为聚簇索引和二级索引，聚簇索引叶子节点是数据，二级索引叶子节点是主键<br>以下为例：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//id 为主键值</span><br><span class="line">select count(id) from t_order;</span><br></pre></td></tr></table></figure>
+<p>如果表里只有主键索引（聚簇索引），没有二级索引时，InnoDB会循环遍历聚簇索引，<strong>将读取到的记录返回给server层</strong>，然后读取记录中的id值，并根据id是否为null来决定是否给count+1</p>
+<p><strong>如果表里有二级索引</strong> 那么Innodb循环的对象就不是聚簇索引，而是二级索引</p>
+<blockquote>
+<p>相同数量的二级索引记录可比聚簇索引记录占用更少的存储空间，所以遍历二级索引的I&#x2F;O成本比聚簇索引的I&#x2F;O成本小，所以<strong>优化器</strong>选择的是二级索引。</p>
+</blockquote>
+<h4 id="count-字段-的执行过程"><a href="#count-字段-的执行过程" class="headerlink" title="count(字段)的执行过程"></a>count(字段)的执行过程</h4><h4 id="count-1-的执行过程"><a href="#count-1-的执行过程" class="headerlink" title="count(1)的执行过程"></a>count(1)的执行过程</h4><p>与count(字段)相同，扫描聚簇索引，但是不查询字段，只返回记录。</p>
+<h4 id="count-执行过程"><a href="#count-执行过程" class="headerlink" title="count(*)执行过程"></a>count(*)执行过程</h4><p>count(*)其实等同于count(0),MySQL会将*转为0</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>Mysql对count(*)、count(1)、count(主键字段)做了优化，如果表里有二级索引，会优先走key_len最小的二级索引进行扫描<br>再者，就是不要使用count(字段)来统计记录个数，会采用全表扫描的方式来记录。</p>
 
     </div>
 
@@ -257,14 +275,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/10/27/spring-bootstrap/" rel="prev" title="spring-bootstrap及spring多配置文件">
-                  <i class="fa fa-angle-left"></i> spring-bootstrap及spring多配置文件
+                <a href="/2023/11/08/maven-general/" rel="prev" title="maven-general">
+                  <i class="fa fa-angle-left"></i> maven-general
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/10/30/db-index/" rel="next" title="数据库索引详解">
-                  数据库索引详解 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>

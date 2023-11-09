@@ -26,11 +26,13 @@
 <meta property="og:site_name" content="这是liuluc&#39;s个人博客">
 <meta property="og:description" content="数据库索引详解">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://makerbug.github.io/db-index/Wqy6nwfXNX.jpg">
 <meta property="article:published_time" content="2023-10-30T02:09:41.000Z">
-<meta property="article:modified_time" content="2023-10-30T07:21:42.603Z">
+<meta property="article:modified_time" content="2023-11-09T03:11:53.482Z">
 <meta property="article:author" content="liuluc">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://makerbug.github.io/db-index/Wqy6nwfXNX.jpg">
 
 
 <link rel="canonical" href="https://makerbug.github.io/2023/10/30/db-index/">
@@ -113,7 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">索引的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">3.</span> <span class="nav-text">索引的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%A1%E8%B6%B3%E5%A4%8D%E5%90%88%E7%B4%A2%E5%BC%95%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%B8%A4%E5%A4%A7%E5%8E%9F%E5%88%99"><span class="nav-number">4.</span> <span class="nav-text">满足复合索引查询的两大原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">5.</span> <span class="nav-text">索引的存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#B%E6%A0%91"><span class="nav-number">5.1.</span> <span class="nav-text">B树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-%E6%A0%91"><span class="nav-number">5.2.</span> <span class="nav-text">B+树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%8C%83%E5%9B%B4%E6%9F%A5%E8%AF%A2"><span class="nav-number">5.2.1.</span> <span class="nav-text">范围查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="nav-number">6.</span> <span class="nav-text">回表查询</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">索引的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">3.</span> <span class="nav-text">索引的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%A1%E8%B6%B3%E5%A4%8D%E5%90%88%E7%B4%A2%E5%BC%95%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%B8%A4%E5%A4%A7%E5%8E%9F%E5%88%99"><span class="nav-number">4.</span> <span class="nav-text">满足复合索引查询的两大原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">5.</span> <span class="nav-text">索引的存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#B%E6%A0%91"><span class="nav-number">5.1.</span> <span class="nav-text">B树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-%E6%A0%91"><span class="nav-number">5.2.</span> <span class="nav-text">B+树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%8C%83%E5%9B%B4%E6%9F%A5%E8%AF%A2"><span class="nav-number">5.2.1.</span> <span class="nav-text">范围查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="nav-number">6.</span> <span class="nav-text">回表查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95"><span class="nav-number">7.</span> <span class="nav-text">覆盖索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%8E%A8"><span class="nav-number">8.</span> <span class="nav-text">索引下推</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="nav-number">9.</span> <span class="nav-text">索引失效的场景</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -126,7 +128,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -191,9 +193,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-10-30 10:09:41 / 修改时间：15:21:42" itemprop="dateCreated datePublished" datetime="2023-10-30T10:09:41+08:00">2023-10-30</time>
+      <time title="创建时间：2023-10-30 10:09:41" itemprop="dateCreated datePublished" datetime="2023-10-30T10:09:41+08:00">2023-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-09 11:11:53" itemprop="dateModified" datetime="2023-11-09T11:11:53+08:00">2023-11-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -219,14 +227,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span></span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>NaN:aN</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -278,7 +286,27 @@
 </ol>
 <h4 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h4><p>B+树和B树最主要的区别在于&#x3D;&#x3D;非叶子节点是否存储数据的问题&#x3D;&#x3D;<br>B树：叶子节点和非叶子节点都会存储数据<br>B+树：只有叶子节点会存储数据，非叶子节点只存储键值key<br><a target="_blank" rel="noopener" href="https://ucc.alicdn.com/images/user-upload-01/0cf6f390478e4f83a72c82325c329926.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiA5a6_5ZCb,size_20,color_FFFFFF,t_70,g_se,x_16">B+树</a></p>
 <h5 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h5><p><a target="_blank" rel="noopener" href="https://ucc.alicdn.com/images/user-upload-01/d7e3168feae043cca47600b95b901c41.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiA5a6_5ZCb,size_20,color_FFFFFF,t_70,g_se,x_16">范围查询</a></p>
-<h3 id="回表查询"><a href="#回表查询" class="headerlink" title="回表查询"></a>回表查询</h3><p>在辅助索引树中获取到主键id，再根据id到主键索引中检索数据的过程称为回表查询。</p>
+<h3 id="回表查询"><a href="#回表查询" class="headerlink" title="回表查询"></a>回表查询</h3><p>在辅助索引树(二级索引、普通索引)中获取到主键id，再根据id到主键索引中检索数据的过程称为回表查询。</p>
+<h3 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h3><p>从非主键索引中就能查到的记录，而不需要查询主键索引中的记录，避免了回表的产生，减少了树的搜索次数，显著提高了性能。</p>
+<p>业务需求:根据学生姓名查询学生年龄 使用场景非常频繁<br>解决方案：建立姓名和年龄的联合索引<br><img src="/./db-index/Wqy6nwfXNX.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SQL语句：</span><br><span class="line">SELECT age FROM student WHERE name = &#x27;小李&#x27;；</span><br></pre></td></tr></table></figure>
+<p>查询流程：</p>
+<ol>
+<li>在name，age联合索引树上找到名称为小李的节点</li>
+<li>此时节点索引里包含信息age 直接返回12</li>
+</ol>
+<p><strong>这时候就不需要回表查询了</strong></p>
+<h3 id="索引下推"><a href="#索引下推" class="headerlink" title="索引下推"></a>索引下推</h3><h3 id="索引失效的场景"><a href="#索引失效的场景" class="headerlink" title="索引失效的场景"></a>索引失效的场景</h3><ol>
+<li>违反最左前缀原则</li>
+<li>在索引列进行了表达式操作（计算、函数、<strong>自动或手动</strong>的类型转换）</li>
+<li>范围条件（&lt;,&gt;,between）右边的字段索引失效</li>
+<li>不等于!&#x3D;,&lt;&gt;, 空或非空 is null, is not null导致索引失效</li>
+<li>以%开头的like模糊匹配</li>
+<li>or导致索引失效<blockquote>
+<p>A1 &gt; 1 OR A2 &gt; 2<br>如果A1或者A2其中之一没索引，那查询必然要遍历全表，有索引的字段便“索引失效”了。<br>如果A1和A2都是索引，DBMS可能会发现索引的效率不如顺序扫描全表。比如说先扫一遍要LiLei,又要再扫一遍要HanMeimei。</p>
+</blockquote>
+</li>
+</ol>
 
     </div>
 
