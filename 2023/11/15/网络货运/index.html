@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"makerbug.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="其实就是一个承运方，作为承运方它就能给你开票。 为了坐实他是真实承运方，不存在虚开，平台利用互联网达到合同 信息 轨迹 资金 票据五流合一，也就要求你签合同，司机和货主配合操作装卸货回单上传司机证件车辆证件等。  不过这些都是虚的，冠冕堂皇，还不是为了开票，本来自己就是真实承运方，非要上平台走一圈，证明平台才是真实承运方，来套这个运输票，平台又利用税务洼地降低成本赚成本差。 而且好多平台自己都税务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络货运">
+<meta property="og:url" content="https://makerbug.github.io/2023/11/15/%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90/index.html">
+<meta property="og:site_name" content="这是liuluc&#39;s个人博客">
+<meta property="og:description" content="其实就是一个承运方，作为承运方它就能给你开票。 为了坐实他是真实承运方，不存在虚开，平台利用互联网达到合同 信息 轨迹 资金 票据五流合一，也就要求你签合同，司机和货主配合操作装卸货回单上传司机证件车辆证件等。  不过这些都是虚的，冠冕堂皇，还不是为了开票，本来自己就是真实承运方，非要上平台走一圈，证明平台才是真实承运方，来套这个运输票，平台又利用税务洼地降低成本赚成本差。 而且好多平台自己都税务">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-15T06:14:08.000Z">
+<meta property="article:modified_time" content="2023-11-16T08:21:03.120Z">
+<meta property="article:author" content="liuluc">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://makerbug.github.io/2023/11/15/%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://makerbug.github.io/2023/11/15/%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90/","path":"2023/11/15/网络货运/","title":"网络货运"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>网络货运 | 这是liuluc's个人博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">这是liuluc's个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一名程序员、足球运动员、摄影师、音乐家、骑行者的成长之路</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E6%B5%81%E5%90%88%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">五流合一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90%E5%85%AB%E5%A4%A7%E5%8A%9F%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text">网络货运八大功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E7%9A%84%E7%A8%8E%E6%94%B6%E6%94%BF%E7%AD%96"><span class="nav-number">3.</span> <span class="nav-text">网络货运平台使用的税收政策</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">liuluc</p>
+  <div class="site-description" itemprop="description">热爱每一个傍晚</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://makerbug.github.io/2023/11/15/%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liuluc">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这是liuluc's个人博客">
+      <meta itemprop="description" content="热爱每一个傍晚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="网络货运 | 这是liuluc's个人博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          网络货运
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-15 14:14:08" itemprop="dateCreated datePublished" datetime="2023-11-15T14:14:08+08:00">2023-11-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-16 16:21:03" itemprop="dateModified" datetime="2023-11-16T16:21:03+08:00">2023-11-16</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>11 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>其实就是一个承运方，作为承运方它就能给你开票。 为了坐实他是真实承运方，不存在虚开，平台利用互联网达到合同 信息 轨迹 资金 票据五流合一，也就要求你签合同，司机和货主配合操作装卸货回单上传司机证件车辆证件等。  不过这些都是虚的，冠冕堂皇，还不是为了开票，本来自己就是真实承运方，非要上平台走一圈，证明平台才是真实承运方，来套这个运输票，平台又利用税务洼地降低成本赚成本差。 而且好多平台自己都税务不合规，根本开不出司机票，也是打白条的形式入账。 要选平台，就选中储嘛，中国唯一一家央企网络货运平台，代开司机票，完整的税务路径，网络货运最后的希望，不然真全部成开票平台了。再多一句嘴，真实的网络货运应该是货主发货到平台，平台承运此票货，然后司机再承运平台的这票货，利用平台的整合货主能力和运力池，来为企业降本增效，为司机提高接单效率（就如满帮那样的操作，但是满帮起初只是撮合平台，做的撮合业务，不能开票，后来改成承运平台才能开票。）但是事与愿违，如今的平台都是本来货主就找到司机作为承运了，但是因为取不到司机票，去平台兜一圈来套票。</p>
+<p>作者：二云<br>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/425730769/answer/2927729989">https://www.zhihu.com/question/425730769/answer/2927729989</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h3 id="五流合一"><a href="#五流合一" class="headerlink" title="五流合一"></a>五流合一</h3><p>其实，“五流合一”是税务机构判定交易是否真实的最主要依据。具体来看，“五流合一”指的是业务开展过程中“信息流、票据流、合同流、运输流、资金流”的统一且对应。</p>
+<p>合同流：指保证合同的真实性。合同作为一种民事法律行为，是当事人协商一致的产物，是平等的当事人之间设立、变更、终止权利义务关系的协议，约定了合作双方的交易机制和盈利模式。</p>
+<p>信息流：指的是实时采集实际承运车辆运输轨迹的动态信息，并在货物起运和确认送达时，实时采集和上传驾驶员地理位置信息，实现交易、运输、结算等各环节全过程透明化动态管理。</p>
+<p>票据流：指的是买卖双方交易过程中，一切单位和个人在购销商品、提供或接受服务以及从事其他经营活动中，所开具和收取的业务凭证，是会计核算的原始依据，也是审计机关、税务机关执法检查的重要依据。</p>
+<p>资金流：指的是交易双方随着业务活动开展而发生的资金往来，其与发票流紧密相连，是发票流的“骨相”。</p>
+<p>运输流：是指货物或服务进行了流通，为消除商品从生产者到消费者之间的场所间隔和时间间隔的物理性经流活动，包括运输、保管、搬运、包装、流通加工、信息活动等活动，目前随着网络时代的到来，也表现为线上商品的交易和信息流转，在税务账本上表现为具体的“进项类别”“销项类别”等等。</p>
+<p>实现“五流合一”，不仅是行业要求，也是国家监管的规定。“五流合一”的目的是为了保证双方经济业务的真实性，防止虚开发票。</p>
+<p>平台企业以承运人的身份跟货主签订运输合同，跟下游实际承运人签订托运合同。平台企业对货主而言，其具备承运人的法律地位，享有承运人的权利并承担义务;而对实际承运人而言，平台企业成为了货物托运人，享有托运人的权利并承担义务，这很好 的 保障了各方利益确保运输的安全稳定性。利用平台智能匹配技术实现高效率调度，保障每笔运单的装货点、行车轨迹、卸货点、运行时间、车辆信息、司机信息等等都“有迹可循”</p>
+<p><strong>他们的问题在于个体司机无法为货主代开发票，导致货主增值税进项抵扣不足、企业所得税税前列支缺乏合法票据。而网络货运&#x2F;无车承运平台的出现恰恰为其解决了发票问题</strong></p>
+<p>但是从网络货运平台开票是不是就“高枕无忧”了呢？自无车承运到网络货运，国家监管部门一直强调业务真实性与管理规范化。不合规的开票业务不仅会导致平台面临惩罚，也会牵连到下游的受票企业承担税务风险。</p>
+<p>网络货运中最核心要素是业务真实。一笔运单一张发票，每张税务发票背后可以真实的反映订单实时信息，托运企业可以随时通过发票查询到订单信息，这才是一张税务发票的正确打开方式。货主企业一定要选择有技术实力的网络货运平台，线上记录运输全流程轨迹，每一笔运单的行车轨迹、卸货点、运行时间等，都“有迹可循”。</p>
+<p>其次是过账刷票风险，一些平台在代收货款、资金结算的过程中，完全脱离了相关监管机构的监管，在运单结束后，将运费线下集中付给中间人，再由中间人转给实际承运人，这种行为很容易造成刷票嫌疑。另外如果网络货运平台存在一定账期，无法满足司机的及时付款需求，有些货主不得不提前垫资，再接受平台的私下回款这样就造成了运费由货主公户支付给平台公户，再回转到货主私户的“资金回流”假象。这时候就凸显了“资金流”的重要性，货主企业在选择网络货运平台时一定要考察其付款周期和资金流明细，平台能够提供具体到每一笔订单的凭证，呈现企业详细的业务流水，才能避免过账刷票和资金回流的风险。</p>
+<p>最后是集中委托开票和“张冠李戴”错开发票的风险。票据流是四流合一中最难也是最关键的合规要素。某些工程方货主发生的个体司机运输任务频繁，每一次单独开票耗费时间精力，因此其往往在业务发生时仅记录车主、车辆、物流信息及报酬金额，在企业所得税汇算清缴之前集中通过网络货运&#x2F;无车承运平台开具发票。此种情况下运输的各项信息均为真实，但出现了业务发生日期早于开票日期，且开票量大、集中的现象，易引发税务预警。对于名下控制多家公司的货主，其控制的A公司发生了实际运输任务，但A公司进项富余，不需要更多发票，而其控制的B公司则进项短缺，因此，在向网络货运&#x2F;无车承运平台提供真实运输业务信息的基础上进行“张冠李戴”为B公司取得发票。</p>
+<p>2.网络货运的业务与责任范围：不仅仅是为托运人和实际承运人提供信息中介和交易撮合等服务的平台，而是以真实运输业务为核心，负有全程运输安全的法律责任主体。通俗来讲，网络货运就是一个提供运输信息交易平台的运输企业。平台为托运方和实际承运人提供信息发布与找货的渠道，用户通过平台下单，接单，平台作为运输企业负责全程监督整个运输过程的安全。</p>
+<p>作者：一叶障目<br>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/391153828/answer/2002008837">https://www.zhihu.com/question/391153828/answer/2002008837</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>不管信息时代发生多大变革，物流依然是围绕着人、车、物三者运转的密集劳动型产业；而科技和互联网的意义，则更多是提高资源配置效率。网络货运平台的产生也是同样的道理</p>
+<h3 id="网络货运八大功能"><a href="#网络货运八大功能" class="headerlink" title="网络货运八大功能"></a>网络货运八大功能</h3><ol>
+<li>信息发布</li>
+<li>线上交易</li>
+<li>全程监控</li>
+<li>金融支付</li>
+<li>咨询投诉</li>
+<li>在线评价</li>
+<li>查询统计</li>
+<li>数据调取</li>
+</ol>
+<p>网络货运平台实现与省级交通运输主管部门、部交互系统的对接和数据传输，对接省级道路运政管理信息系统、全国道路货运车辆公共监管与服务平台，并建立与税务、保险等部门的信息共享机制，共同规范网络货运市场，提升网络货运管理水平。</p>
+<p>1．网络货运经营者数据接入。</p>
+<p>为网络货运经营者提供运单、资金流水单、车辆及驾驶员基本信息、驾驶员位置信息接入接口服务。网络货运经营者根据《部网络货运信息交互系统接入指南》（以下简称《接入指南》）要求，实时上传运单、资金流水单、车辆及驾驶员基本信息、驾驶员位置信息至省级监测系统。</p>
+<p>2．向部交互系统上传数据。</p>
+<p>省级监测系统接收到网络货运经营者上传的运单数据后，根据《接入指南》要求，及时上传运单、资金流水单、车辆及驾驶员基本信息、驾驶员位置信息至部交互系统。</p>
+<p>3．第三方平台对接。 </p>
+<p>省级监测系统建立接口，实现与省级道路运政管理信息系统、全国道路货运车辆公共监管与服务平台、税务保险信息系统的对接。</p>
+<p>1、网络货运平台企业代开增值税专用发票应当缴纳的增值税，由网络货运平台企业按月代会员向网络货运平台企业主管税务机关申报缴纳，并将完税凭证转交给会员。<br>2、网络货运平台企业办理增值税纳税申报时，代开增值税专用发票对应的收入不属于网络货运平台企业的增值税应税收入，无须申报。网络货运平台企业应按月将代开增值税专用发票和代缴税款情况向主管税务机关报备，具体报备的有关事项由各省税务局确定。<br>3、会员应按照其主管税务机关核定的纳税期限，按规定计算增值税应纳税额，抵减已由网络货运平台企业代为缴纳的增值税后，向主管税务机关申报纳税。</p>
+<p>法律依据：《国家税务总局关于开展网络平台道路货物运输企业代开增值税专用发票试点工作的通知》纳税人以承运人身份与托运人签订运输服务合同，收取运费并承担承运人责任，然后委托实际承运人完成全部或部分运输服务时，自行采购并交给实际承运人使用的成品油和支付的道路、桥、闸通行费，同时符合下列条件的，其进项税额准予从销项税额中抵扣：</p>
+<p>（一）成品油和道路、桥、闸通行费，应用于纳税人委托实际承运人完成的运输服务；</p>
+<p>（二）取得的增值税扣税凭证符合现行规定。</p>
+<p>为用户代开增值税专用发票，平台需要具备的资质<br>同时满足4个小条件：1.取得网络货运的《道路运输经营许可证》，具有智能物流运输能力。2.与省级交通运输主管部门建立的网络货运信息监测系统实现有效对接，按照要求完成数据上传。3.审查用户相关信息，保证所有证件合法有效。4.平台代开增值税专用发票不得收取任何费用，否则取消其试点企业资格。</p>
+<p>网络货运经营者以承运人为承运人，与承运人签署运输服务合同书，扣除运输费，担负承运人义务，随后授权委托具体承运人自主进行所有或一部分运输服务，选购成品油批发，交纳具体承运人应用的路面、公路桥梁、水利闸门高速公路费，另外合乎以下标准的，容许从销项税中抵税进项税：<br>(1)成品油批发和路面、公路桥梁、水利闸门高速公路费适用经营者授权委托具体承运人的运输服务;<br>(2) 获得的增值税抵税凭据合乎现行标准要求</p>
+<p>针对运送全过程中造成的高速公路费(增值税率是3%)，一般司机可向相关网站出具有关发票。可是，充分考虑司机人群的信息内容专用工具水准较低，互联网货运平台自身能够根据api接口立即获得有关运输段的ETC高速公路费，物流企业可以用有关发票测算抵税增值税销项税。<br>必须了解的是，互联网货运平台自身能够根据api接口立即获得有关运输段的ETC高速公路费发票。</p>
+<h3 id="网络货运平台使用的税收政策"><a href="#网络货运平台使用的税收政策" class="headerlink" title="网络货运平台使用的税收政策"></a>网络货运平台使用的税收政策</h3><p>纳税人自行采购用于委托实际承运人完成运输服务的成品油和支付的道路、桥、闸通行费，可在销项税额中抵扣进项税额</p>
+<p>网络货运企业作为承运人，可按此税率调整，为托运人开具9%运输服务增值税发票。</p>
+<p>，纳入代开试点的网络货运企业，经各省、自治区、直辖市和计划单列市税务局批准，可为符合条件的货物运输业小规模纳税人（须注册为该平台会员）撮合代开3%货物运输业增值税专用发票，并代办相关涉税事项。</p>
+<p>进项税额通俗点就是买进货物时支付的税额；销项税通俗点销售商品时应支付的税额。举个例子，企业花1000元钱购进商品，为企业提供商品的一方要替税务局向你收16%元的税。你要向卖给你商品方支付1160元。当你把1000的商品以1300元卖出的时候(或加工成别的商品以1300元卖出时)，你要替税务局向购买方收取1300*0.16&#x3D;208元税款。实际你的纳税额是208-160&#x3D;48元。其中，160元叫进项税，208元叫销项税，48是抵扣后需要交的税金。</p>
+<p>作者：慧算账<br>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/279104899/answer/535848411">https://www.zhihu.com/question/279104899/answer/535848411</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>进项税额通俗点就是买进货物时支付的税额；销项税通俗点销售商品时应支付的税额。举个例子，企业花1000元钱购进商品，为企业提供商品的一方要替税务局向你收16%元的税。你要向卖给你商品方支付1160元。当你把1000的商品以1300元卖出的时候(或加工成别的商品以1300元卖出时)，你要替税务局向购买方收取1300*0.16&#x3D;208元税款。实际你的纳税额是208-160&#x3D;48元。其中，160元叫进项税，208元叫销项税，48是抵扣后需要交的税金。</p>
+<p>作者：慧算账<br>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/279104899/answer/535848411">https://www.zhihu.com/question/279104899/answer/535848411</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>）信息发布</p>
+<p>网络货运经营者依托网络平台为托运人、实际承运人提供真实、有效的货源及运力信息，并对货源及车源信息进行管理，包括但不限于信息发布、筛选、修改、推送、撤回等功能。</p>
+<p>2）线上交易</p>
+<p>网络货运经营者应通过网络平台在线组织运力，进行货源、运力资源的有效整合，实现信息精准配置，生成电子运单，完成线上交易。</p>
+<p>3）全程监控</p>
+<p>网络平台应自行或者使用第三方平台对运输地点、轨迹、状态进行动态监控，具备对装货、卸货、结算等进行有效管控的功能和物流信息全流程跟踪、记录、存储、分析能力；应记录含有时间和地理位置信息的实时行驶轨迹数据；宜实时展示实际承运驾驶员、车辆运输轨迹，并实现实际承运人相关资格证件到期预警提示、违规行为报警等功能。</p>
+<p>4）金融支付</p>
+<p>网络平台应具备核销对账、交易明细查询、生成资金流水单等功能，宜具备在线支付功能。</p>
+<p>5）咨询投诉</p>
+<p>网络平台应具备咨询、举报投诉、结果反馈等功能。</p>
+<p>6）在线评价</p>
+<p>网络平台应具备对托运、实际承运人进行信用打分及评级的功能。</p>
+<p>7）查询统计</p>
+<p>网络平台应具备信息查询功能，包括运单、资金流水、运输轨迹、信用记录、投诉处理等信息分类分户查询以及数据统计分析的功能。</p>
+<p>8）数据调取</p>
+<p>网络平台应具备交通运输、税务等相关部门依法调取数据的条件。</p>
+<p>1）给司机、货主分别代开3%、9%的增值税专用发票</p>
+<p>从国家税务总局发布的《关于开展网络平台道路货物运输企业代开增值税专用发票试点工作的通知》（税总函（2019）405号）文件可以了解到，网络货运平台可以根据实际运输方式选择“运输服务*无运输工具承运业务”下明细项目按照“交通运输服务 ”9%的增值税税率给委托方，也就是我们说的货主，开具增值税专用发票。除此之外，平台还可以为符合要求的实际承运人代开增值税专用发票，征收率为 3%。简单的说，就是平台可以为司机开发票了，根据小规模纳税人的资质，开具3%的增值税专票。当然，一方面解决了司机不能开票的问题；另一方面，也节省了司机去税务局开票的麻烦，可谓是一举两得。但我们也不能就表面它就只代开发票，深层来说，平台还解决了货主、运输企业两者之间销项、进项的问题，对物流行业起到降本增效的作用。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/11/13/springboot-enableAutoConfiguration%E6%B3%A8%E8%A7%A3%E8%AF%A6%E8%A7%A3/" rel="prev" title="springboot自动配置详解">
+                  <i class="fa fa-angle-left"></i> springboot自动配置详解
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/11/22/spring/" rel="next" title="spring">
+                  spring <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">liuluc</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">NaNm</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">NaN:aN</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
