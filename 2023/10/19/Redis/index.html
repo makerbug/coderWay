@@ -40,8 +40,9 @@
 <meta property="og:image" content="https://makerbug.github.io/redis/ewiYBnX4zk.jpg">
 <meta property="og:image" content="https://makerbug.github.io/redis/C4gSESs9sB.jpg">
 <meta property="og:image" content="https://makerbug.github.io/redis/tOmK9M0zcr.jpg">
+<meta property="og:image" content="https://makerbug.github.io/redis/JViYRzUjlv.jpg">
 <meta property="article:published_time" content="2023-10-19T09:15:58.000Z">
-<meta property="article:modified_time" content="2023-12-29T08:59:07.227Z">
+<meta property="article:modified_time" content="2024-01-02T05:17:36.164Z">
 <meta property="article:author" content="liuluc">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -128,7 +129,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">Redis网络模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E5%BF%AB"><span class="nav-number">1.1.</span> <span class="nav-text">Redis为什么这么快</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E9%AB%98%E5%8F%AF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">Redis高可用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E4%BB%8E%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">主从模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A8%E9%87%8F%E5%A4%8D%E5%88%B6"><span class="nav-number">2.1.1.</span> <span class="nav-text">全量复制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E9%87%8F%E5%A4%8D%E5%88%B6"><span class="nav-number">2.1.2.</span> <span class="nav-text">增量复制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A2%9E%E9%87%8F%E5%A4%8D%E5%88%B6%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">增量复制的过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%81%E7%82%B9"><span class="nav-number">2.2.</span> <span class="nav-text">要点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sentinel%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">sentinel哨兵模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cluster%E9%9B%86%E7%BE%A4%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">cluster集群模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E9%80%9A%E4%BF%A1"><span class="nav-number">4.2.</span> <span class="nav-text">节点通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redis-cluster%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E5%AE%9E%E4%BE%8B%E5%92%8C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%98%A0%E5%B0%84%E5%85%B3%E7%B3%BB"><span class="nav-number">4.3.</span> <span class="nav-text">redis cluster如何处理实例和数据的映射关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E6%A7%BD%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB"><span class="nav-number">4.4.</span> <span class="nav-text">哈希槽数据迁移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7%E4%B8%8E%E4%B8%BB%E5%A4%87%E5%88%87%E6%8D%A2"><span class="nav-number">4.5.</span> <span class="nav-text">高可用性与主备切换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E7%AE%A1%E9%81%93"><span class="nav-number">5.</span> <span class="nav-text">Redis管道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pipelining-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">5.1.</span> <span class="nav-text">pipelining 使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%81%E7%82%B9-1"><span class="nav-number">5.2.</span> <span class="nav-text">要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8ERedis%E7%9A%84%E4%BA%A4%E4%BA%92%E8%BF%87%E7%A8%8B"><span class="nav-number">5.3.</span> <span class="nav-text">客户端与Redis的交互过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-%E4%BA%8B%E5%8A%A1"><span class="nav-number">5.4.</span> <span class="nav-text">Redis 事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-number">5.5.</span> <span class="nav-text">事务的四大特性</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">Redis网络模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E5%BF%AB"><span class="nav-number">1.1.</span> <span class="nav-text">Redis为什么这么快</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E9%AB%98%E5%8F%AF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">Redis高可用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E4%BB%8E%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">主从模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A8%E9%87%8F%E5%A4%8D%E5%88%B6"><span class="nav-number">2.1.1.</span> <span class="nav-text">全量复制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E9%87%8F%E5%A4%8D%E5%88%B6"><span class="nav-number">2.1.2.</span> <span class="nav-text">增量复制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A2%9E%E9%87%8F%E5%A4%8D%E5%88%B6%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">增量复制的过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%81%E7%82%B9"><span class="nav-number">2.2.</span> <span class="nav-text">要点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sentinel%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">sentinel哨兵模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cluster%E9%9B%86%E7%BE%A4%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">cluster集群模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E9%80%9A%E4%BF%A1"><span class="nav-number">4.2.</span> <span class="nav-text">节点通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redis-cluster%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E5%AE%9E%E4%BE%8B%E5%92%8C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%98%A0%E5%B0%84%E5%85%B3%E7%B3%BB"><span class="nav-number">4.3.</span> <span class="nav-text">redis cluster如何处理实例和数据的映射关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E6%A7%BD%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB"><span class="nav-number">4.4.</span> <span class="nav-text">哈希槽数据迁移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7%E4%B8%8E%E4%B8%BB%E5%A4%87%E5%88%87%E6%8D%A2"><span class="nav-number">4.5.</span> <span class="nav-text">高可用性与主备切换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E7%AE%A1%E9%81%93"><span class="nav-number">5.</span> <span class="nav-text">Redis管道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pipelining-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">5.1.</span> <span class="nav-text">pipelining 使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%81%E7%82%B9-1"><span class="nav-number">5.2.</span> <span class="nav-text">要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8ERedis%E7%9A%84%E4%BA%A4%E4%BA%92%E8%BF%87%E7%A8%8B"><span class="nav-number">5.3.</span> <span class="nav-text">客户端与Redis的交互过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-%E4%BA%8B%E5%8A%A1"><span class="nav-number">5.4.</span> <span class="nav-text">Redis 事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-number">5.5.</span> <span class="nav-text">事务的四大特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lua%E8%84%9A%E6%9C%AC"><span class="nav-number">5.6.</span> <span class="nav-text">Lua脚本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81"><span class="nav-number">6.</span> <span class="nav-text">Redis分布式锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redisson"><span class="nav-number">7.</span> <span class="nav-text">Redisson</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -141,7 +142,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -214,7 +215,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-29 16:59:07" itemprop="dateModified" datetime="2023-12-29T16:59:07+08:00">2023-12-29</time>
+      <time title="修改时间：2024-01-02 13:17:36" itemprop="dateModified" datetime="2024-01-02T13:17:36+08:00">2024-01-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -240,14 +241,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.1k</span>
+      <span>5.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>8 分钟</span>
+      <span>11 分钟</span>
     </span>
 </div>
 
@@ -378,6 +379,24 @@
 </li>
 <li>一致性：事务执行前后，数据的改变都是合法的，且各方数据都是一致的。</li>
 </ol>
+<h3 id="Lua脚本"><a href="#Lua脚本" class="headerlink" title="Lua脚本"></a>Lua脚本</h3><p>背景；<br>有时候我们需要一次性操作多个Redis命令，但是多个操作不具备原子性，而且Redis的事务也不够强大，<strong>不支持事务</strong>的回滚，还无法实现命令之间的关系计算，所以，<strong>在一般的开发中，我们会利用Lua脚本来实现Redis的事务</strong>。<br>好处：</p>
+<ol>
+<li>减少网络开销，多个请求通过脚本的形式一次发送，减少网络时延</li>
+<li>原子操作，Redis会将整个脚本作为一个整体执行，中间不会被其他命令插入。</li>
+<li>复用，<strong>客户端发送的脚本会永久存在Redis中，其他客户端可以复用这一脚本而不需要使用代码完成相同的逻辑。</strong></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Lua脚本示例</span><br><span class="line">local key = KEYS[1]</span><br><span class="line">local val = redis.call(&quot;GET&quot;, key);</span><br><span class="line"></span><br><span class="line">if val == ARGV[1]</span><br><span class="line">then</span><br><span class="line">        redis.call(&#x27;SET&#x27;, KEYS[1], ARGV[2])</span><br><span class="line">        return 1</span><br><span class="line">else</span><br><span class="line">        return 0</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">执行lua脚本</span><br><span class="line">redis-cli -a 123456 --eval ./Redis_CompareAndSet.lua userName , zhangsan lisi </span><br><span class="line"></span><br><span class="line">SpringBoot集成Redis执行Lua脚本</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">RedisTemplate执行Lua脚本示例</span><br><span class="line">/**</span><br><span class="line"> * @author Howinfun</span><br><span class="line"> * @desc lua 脚本测试</span><br><span class="line"> * @date 2019/11/5</span><br><span class="line"> */</span><br><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">@ActiveProfiles(&quot;test&quot;)</span><br><span class="line">@SpringBootTest(classes = ThirdPartyServerApplication.class)</span><br><span class="line">public class RedisTest &#123;</span><br><span class="line"></span><br><span class="line">    /** 释放锁lua脚本 */</span><br><span class="line">    private static final String RELEASE_LOCK_LUA_SCRIPT = &quot;if redis.call(&#x27;get&#x27;, KEYS[1]) == ARGV[1] then return redis.call(&#x27;del&#x27;, KEYS[1]) else return 0 end&quot;;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private StringRedisTemplate redisTemplate;</span><br><span class="line">    @Test</span><br><span class="line">    public void contextLoads() &#123;</span><br><span class="line">        String lockKey = &quot;123&quot;;</span><br><span class="line">        String UUID = cn.hutool.core.lang.UUID.fastUUID().toString();</span><br><span class="line">        boolean success = redisTemplate.opsForValue().setIfAbsent(lockKey,UUID,3, TimeUnit.MINUTES);</span><br><span class="line">        if (!success)&#123;</span><br><span class="line">            System.out.println(&quot;锁已存在&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        // 指定 lua 脚本，并且指定返回值类型</span><br><span class="line">        DefaultRedisScript&lt;Long&gt; redisScript = new DefaultRedisScript&lt;&gt;(RELEASE_LOCK_LUA_SCRIPT,Long.class);</span><br><span class="line">        // 参数一：redisScript，参数二：key列表，参数三：arg（可多个）</span><br><span class="line">        Long result = redisTemplate.execute(redisScript, Collections.singletonList(lockKey),UUID);</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">使用Long接受结果，因为源码不支持Integer返回类型</span><br></pre></td></tr></table></figure>
+
+<h2 id="Redis分布式锁"><a href="#Redis分布式锁" class="headerlink" title="Redis分布式锁"></a>Redis分布式锁</h2><h2 id="Redisson"><a href="#Redisson" class="headerlink" title="Redisson"></a>Redisson</h2><p>加锁流程<br><img src="/./redis/JViYRzUjlv.jpg"></p>
+<p>流程如下：</p>
+<ol>
+<li>A、B争抢一把锁，A获取到后，B阻塞</li>
+<li>B线程阻塞时**并非主动CAS，而是PubSub方式订阅该锁的广播消息</li>
+<li>A操作完成释放了锁，B线程收到订阅消息通知</li>
+<li>B唤醒开始继续抢锁，拿到锁。</li>
+</ol>
 
     </div>
 
@@ -418,7 +437,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
